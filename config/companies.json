@@ -1,0 +1,19 @@
+{
+  "companies": [
+    {
+      "ticker": "BNC",
+      "name": "CEA Industries Inc.",
+      "primary_asset": "BNB",
+      "bloomberg": "BNC US Equity"
+    }
+  ],
+  "assets": {
+    "BTC": {"name": "Bitcoin", "coingecko_id": "bitcoin"},
+    "ETH": {"name": "Ethereum", "coingecko_id": "ethereum"},
+    "SOL": {"name": "Solana", "coingecko_id": "solana"},
+    "BNB": {"name": "Binance Coin", "coingecko_id": "binancecoin"},
+    "TRX": {"name": "Tron", "coingecko_id": "tron"},
+    "XRP": {"name": "XRP", "coingecko_id": "ripple"},
+    "UNKNOWN": {"name": "Unknown", "coingecko_id": null}
+  }
+}

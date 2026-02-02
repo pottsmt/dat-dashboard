@@ -1,0 +1,24 @@
+# Environment
+.env
+venv/
+*.pyc
+__pycache__/
+
+# Data
+data/filings/
+data/exports/
+data/reports/
+data/analysis/
+data/history/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+
+# Bloomberg
+*.xlsm
+*.xlsx

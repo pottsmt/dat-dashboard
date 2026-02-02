@@ -1,0 +1,17 @@
+README.md
+setup.py
+dat_dashboard.egg-info/PKG-INFO
+dat_dashboard.egg-info/SOURCES.txt
+dat_dashboard.egg-info/dependency_links.txt
+dat_dashboard.egg-info/entry_points.txt
+dat_dashboard.egg-info/requires.txt
+dat_dashboard.egg-info/top_level.txt
+src/__init__.py
+src/bloomberg_reader.py
+src/coingecko_client.py
+src/edgar_client.py
+src/email_sender.py
+src/filing_analyzer.py
+src/holdings_tracker.py
+src/main.py
+src/report_generator.py

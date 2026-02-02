@@ -1,0 +1,39 @@
+schedule:
+  time: "08:00"
+  timezone: "America/New_York"
+
+bloomberg:
+  export_path: "data/exports/bloomberg_data.csv"
+
+coingecko:
+  base_url: "https://api.coingecko.com/api/v3"
+  api_key: ""
+
+anthropic:
+  enabled: true
+  model: "claude-sonnet-4-20250514"
+
+email:
+  enabled: false
+  smtp_server: "smtp.gmail.com"
+  smtp_port: 587
+  sender_email: "${EMAIL_SENDER}"
+  sender_password: "${EMAIL_PASSWORD}"
+  recipient_email: "${EMAIL_RECIPIENT}"
+
+edgar:
+  user_agent: "DAT Dashboard research@example.com"
+  filing_types:
+    - "10-K"
+    - "10-Q"
+    - "8-K"
+  lookback_days: 365
+
+output:
+  reports_dir: "data/reports"
+  save_reports: true
+
+performance_periods:
+  - 3
+  - 7
+  - 30

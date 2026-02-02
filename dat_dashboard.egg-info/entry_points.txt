@@ -1,0 +1,2 @@
+[console_scripts]
+dat-dashboard = src.main:main
