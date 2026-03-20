@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MSTR - Strategy Inc | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>MSTR - Strategy Inc</h1>
+        <div class="subtitle">Primary Asset: BTC | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    <div style="background:#f0fff4;border:1px solid #c6f6d5;border-radius:8px;padding:10px 15px;margin-bottom:20px;font-size:13px;color:#22543d;"><strong>Primary Source:</strong> Key metrics (treasury, market cap, mNAV) sourced from <a href="https://www.strategy.com/" target="_blank" style="color:#2b6cb0;">www.strategy.com</a></div>
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$136.41</div>
+        </div>
+        <div class="card">
+            <div class="label">BTC Price</div>
+            <div class="value">$70,141.00</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (761,068 BTC)</div>
+            <div class="value">$53.46B</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$2.25B</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$55.71B</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">346,404,223</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: dashboard</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$160.83</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$47.25B</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$63.21B</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$8.25B</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.85x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">1.19x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-03-15</td>
+                    <td class="number">761,068</td>
+                    <td class="number">+22,337</td>
+                    <td class="number">+3.02%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000119312526107263/0001193125-26-107263-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of March 15, 2026, Strategy Inc holds 761,068 BTC valued at approximately $5.7 billion.</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-03-08</td>
+                    <td class="number">738,731</td>
+                    <td class="number">+17,994</td>
+                    <td class="number">+2.50%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000119312526097598/0001193125-26-097598-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of March 8, 2026, Strategy Inc holds 738,731 BTC valued at approximately $56.04 billion. Details about shares outstan...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-03-01</td>
+                    <td class="number">720,737</td>
+                    <td class="number">+3,015</td>
+                    <td class="number">+0.42%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000119312526084264/0001193125-26-084264-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of March 1, 2026, Strategy Inc holds 720,737 BTC valued at approximately $54.77 billion. There are 1,730,563 shares o...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-22</td>
+                    <td class="number">717,722</td>
+                    <td class="number">+591</td>
+                    <td class="number">+0.08%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000119312526062489/0001193125-26-062489-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 22, 2026, Strategy Inc holds 717,722 BTC valued at approximately $54,600,000. They also sold 297,940 shar...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-16</td>
+                    <td class="number">717,131</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000119312526053105/0001193125-26-053105-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 16, 2026, Strategy Inc holds 717,131 BTC valued at approximately $5.45 billion. The company also sold 785...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-13</td>
+                    <td class="number">717,131</td>
+                    <td class="number">+2,487</td>
+                    <td class="number">+0.35%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000105044626000020/0001050446-26-000020-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of February 13, 2026, Strategy Inc holds approximately 717,131 bitcoins valued at an aggregate fair market value of $...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-08</td>
+                    <td class="number">714,644</td>
+                    <td class="number">+1,142</td>
+                    <td class="number">+0.16%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000119312526041944/0001193125-26-041944-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 8, 2026, Strategy Inc holds 714,644 BTC, valued at approximately $5.435 billion. They also reported selli...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-01</td>
+                    <td class="number">713,502</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000105044626000012/0001050446-26-000012-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 1, 2026, Strategy Inc holds 713,502 bitcoins valued at approximately $54.26 billion. The company also rep...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-01</td>
+                    <td class="number">713,502</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000119312526032731/0001193125-26-032731-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Aggregate BTC Holdings as of Feb 1, 2026. Avg purchase price $76,052</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-02-13</td>
+                    <td class="number">314,112,458</td>
+                    <td class="number">+131,612,458</td>
+                    <td class="number">+72.12%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000105044626000020/0001050446-26-000020-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of February 13, 2026, Strategy Inc holds approximately 717,131 bitcoins valued at an aggregate fair market value of $...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-15</td>
+                    <td class="number">182,500,000</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>N/A</td>
+                    <td><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></td>
+                    <td class="notes">Q4 2025 10-K filing. 650K BTC at filing date.</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$2,303,344</td>
+                    <td>2025-12-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000105044626000020/0001050446-26-000020-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2025-12-31</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>ATM Program Proceeds</td>
+                    <td class="number">$90</td>
+                    <td>2026-02-09</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000119312526041944/0001193125-26-041944-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Proceeds from class A common stock sales under ATM.</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>STRC Stock</td>
+                    <td class="number">$78,500,000</td>
+                    <td>2026-02-17</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1050446/000119312526053105/0001193125-26-053105-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Shares sold under ATM from February 9-16, 2026.</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Company Dashboard, Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

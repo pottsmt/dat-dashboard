@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>AVX - AVAX One Technology | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>AVX - AVAX One Technology</h1>
+        <div class="subtitle">Primary Asset: AVAX | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    <div style="background:#f0fff4;border:1px solid #c6f6d5;border-radius:8px;padding:10px 15px;margin-bottom:20px;font-size:13px;color:#22543d;"><strong>Primary Source:</strong> Key metrics (treasury, market cap, mNAV) sourced from <a href="https://analytics-avaxone.theblueprint.xyz/" target="_blank" style="color:#2b6cb0;">analytics-avaxone.theblueprint.xyz</a></div>
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$0.71</div>
+        </div>
+        <div class="card">
+            <div class="label">AVAX Price</div>
+            <div class="value">$9.48</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (13,920,000 AVAX)</div>
+            <div class="value">$143.01M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$894.70K</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$143.90M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">92,672,000</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: dashboard</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$1.55</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$73.73M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$66.99M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$1.69M</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.51x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.52x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-11-12</td>
+                    <td class="number">7,220,217</td>
+                    <td class="number">+7,220,207</td>
+                    <td class="number">+76681009.72%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315225024469/0001493152-25-024469-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">AVAX One Technology Ltd. reported the purchase of 7,220,216.61 AVAX tokens valued at $80 million as of November 12, 2025...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">9</td>
+                    <td class="number">+3</td>
+                    <td class="number">+38.47%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315225023464/0001493152-25-023464-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, AVAX One Technology Ltd. holds 9.4159 BTC valued at $1,079,429. The company has approximately ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">7</td>
+                    <td class="number">+4</td>
+                    <td class="number">+106.06%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000164117225024019/0001641172-25-024019-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, AgriFORCE holds 6.8 BTC valued at approximately $724,971. The company has issued 1,309,598 shares o...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-31</td>
+                    <td class="number">3</td>
+                    <td class="number">+0</td>
+                    <td class="number">+5.60%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000164117225010961/0001641172-25-010961-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2025, AgriFORCE holds 3.3 BTC valued at approximately $262,257, has basic shares outstanding of 2,865,64...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-01-07</td>
+                    <td class="number">3</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000164117225002955/0001641172-25-002955-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">AgriFORCE holds 3.125 BTC valued approximately at $128,125 and has 1,740,064 shares outstanding as of April 7, 2025.</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-11-14</td>
+                    <td class="number">93,112,148</td>
+                    <td class="number">+91,802,550</td>
+                    <td class="number">+7009.98%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315225023464/0001493152-25-023464-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">The company holds 9.4159 BTC valued at approximately $1,079,429 as of September 30, 2025, with total basic shares outsta...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-14</td>
+                    <td class="number">1,309,598</td>
+                    <td class="number">-1,556,048</td>
+                    <td class="number">-54.30%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000164117225024019/0001641172-25-024019-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, AgriFORCE holds 6.8 BTC valued at approximately $724,971. The company has issued 1,309,598 shares o...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-05-15</td>
+                    <td class="number">2,865,646</td>
+                    <td class="number">+1,125,582</td>
+                    <td class="number">+64.69%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000164117225010961/0001641172-25-010961-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2025, AgriFORCE holds 3.3 BTC valued at approximately $262,257, has basic shares outstanding of 2,865,64...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-04-07</td>
+                    <td class="number">1,740,064</td>
+                    <td class="number">-153,289,509</td>
+                    <td class="number">-98.88%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000164117225002955/0001641172-25-002955-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">AgriFORCE holds 3.125 BTC valued approximately at $128,125 and has 1,740,064 shares outstanding as of April 7, 2025.</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-11-19</td>
+                    <td class="number">155,029,573</td>
+                    <td class="number">+62,686,239</td>
+                    <td class="number">+67.88%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315224046821/0001493152-24-046821-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2024, AgriFORCE has $1,373,294 in cash, 155,029,573 basic shares outstanding, and acquired assets wo...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-08-13</td>
+                    <td class="number">92,343,334</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315224031696/0001493152-24-031696-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2024, AgriFORCE has cash and cash equivalents of approximately $2.94 million and reported 92,343,334 shar...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-06-30</td>
+                    <td class="number">92,343,334</td>
+                    <td class="number">+69,769,396</td>
+                    <td class="number">+309.07%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315224031696/0001493152-24-031696-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2024, the company holds no cryptocurrency in treasury holdings, has 92,343,334 shares outstanding post-re...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-04-01</td>
+                    <td class="number">22,573,938</td>
+                    <td class="number">-3,462,578</td>
+                    <td class="number">-13.30%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315224012418/0001493152-24-012418-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of December 31, 2023, AgriFORCE Growing Systems Ltd. has no cryptocurrency holdings, outstanding shares of 22,573,938...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-03-31</td>
+                    <td class="number">26,036,516</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315224019561/0001493152-24-019561-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2024, AgriFORCE holds no digital assets, has 26.03 million shares outstanding after a recent reverse spl...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$894,701</td>
+                    <td>2025-09-30</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315225023464/0001493152-25-023464-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2025-09-30</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Radical Clean Solutions Ltd.</td>
+                    <td class="number">$225,000</td>
+                    <td>2024-08-13</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315224031696/0001493152-24-031696-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Purchased 14% ownership stake via memorandum of understanding.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Radical Clean Solutions, Inc.</td>
+                    <td class="number">$848,929</td>
+                    <td>2025-04-07</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000164117225002955/0001641172-25-002955-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Acquisition to control their hydroxyl generating systems.</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>130 BTC</td>
+                    <td class="number">$9,118,330</td>
+                    <td>2024-11-28</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315224048692/0001493152-24-048692-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2024-11-28</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>15,000 WLD</td>
+                    <td class="number">$4,800</td>
+                    <td>2024-12-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000164117225002955/0001641172-25-002955-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2024-12-31</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Radical Clean Solutions Inc.</td>
+                    <td class="number">$848,929</td>
+                    <td>2024-11-19</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315224046821/0001493152-24-046821-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Acquisition of assets including hydroxyl generating devices</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Bitcoin Mining Facility</td>
+                    <td class="number">$4,550,000</td>
+                    <td>2025-01-24</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315225003505/0001493152-25-003505-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Purchase of a 5 MW Bitcoin mining facility in Columbiana County, Ohio.</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>145,375,936 USDC</td>
+                    <td class="number">N/A</td>
+                    <td>2025-11-05</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1826397/000149315225021006/0001493152-25-021006-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2025-11-05</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Company Dashboard, Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

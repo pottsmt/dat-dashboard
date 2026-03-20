@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BTOG - Bit Origin Ltd | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>BTOG - Bit Origin Ltd</h1>
+        <div class="subtitle">Primary Asset: DOGE | Generated: 2026-02-13 14:12:46 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Treasury Holdings</div>
+            <div class="value">70,000,000 DOGE</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury Value (NAV)</div>
+            <div class="value">$6.77M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">1,476,842</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: yfinance</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$4.58</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$4.20M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$1.90M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">N/A</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$55.64K</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.62x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV (EV/NAV)</div>
+            <div class="value">0.28x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-08-01</td>
+                    <td class="number">70,000,000</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><span style="display:inline-block;background:#718096;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">press_release</span></td>
+                    <td class="notes">70M+ DOGE treasury. $500M funding facilities for DOGE strategy. BitGo custody</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td colspan="7">No shares history available</td></tr>
+        </tbody>
+    </table>
+
+    
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

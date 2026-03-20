@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HYPD - Hyperion DeFi | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>HYPD - Hyperion DeFi</h1>
+        <div class="subtitle">Primary Asset: HYPE | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$3.55</div>
+        </div>
+        <div class="card">
+            <div class="label">HYPE Price</div>
+            <div class="value">$39.39</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (500,000 HYPE)</div>
+            <div class="value">$21.70M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$8.20M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$29.89M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">20,435,897</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: official</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$1.46</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$72.55M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$72.84M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$8.49M</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">2.43x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">2.71x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-10-28</td>
+                    <td class="number">500,000</td>
+                    <td class="number">-377,871</td>
+                    <td class="number">-43.04%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925104662/0001104659-25-104662-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Hyperion DeFi, Inc. announced the allocation of 500,000 HYPE tokens for a partnership with Felix to aid the launch of a ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">877,871</td>
+                    <td class="number">-842,678</td>
+                    <td class="number">-48.98%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925111671/0001104659-25-111671-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, Hyperion DeFi holds 839,889 HYPE tokens valued at approximately $37.9 million and 877,871 HiHY...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">1,720,549</td>
+                    <td class="number">+220,549</td>
+                    <td class="number">+14.70%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925111287/0001104659-25-111287-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Hyperion DeFi, Inc. reports holding approximately 1.72 million HYPE tokens valued at approximately $37.95 million as of ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-13</td>
+                    <td class="number">1,500,000</td>
+                    <td class="number">+193,548</td>
+                    <td class="number">+14.81%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925077575/0001104659-25-077575-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Hyperion DeFi, Inc. reports a cryptocurrency treasury reserve focused on the HYPE token, accumulating over 1.5 million H...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">1,306,452</td>
+                    <td class="number">+265,868</td>
+                    <td class="number">+25.55%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000141057825001740/0001410578-25-001740-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Hyperion DeFi, Inc. holds 1,306,452 HYPE tokens valued at $45.5 million, has 5,694,659 shares outst...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-25</td>
+                    <td class="number">1,040,584</td>
+                    <td class="number">+40,584</td>
+                    <td class="number">+4.06%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925063687/0001104659-25-063687-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Eyenovia, Inc. has acquired 1,040,584.5 HYPE tokens as part of its treasury strategy, which marks a significant step in ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-20</td>
+                    <td class="number">1,000,000</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925062095/0001104659-25-062095-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Eyenovia, Inc. announced a private placement to build a treasury reserve of 1,000,000 HYPE tokens, becoming one of the f...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-01-01</td>
+                    <td class="number">20,435,897</td>
+                    <td class="number">+12,263,238</td>
+                    <td class="number">+150.05%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465926000748/0001104659-26-000748-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing confirms the shares outstanding as of January 1, 2026, totaling 20,435,897 basic shares. No digital asset tre...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-01</td>
+                    <td class="number">8,172,659</td>
+                    <td class="number">+1,010,000</td>
+                    <td class="number">+14.10%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925119843/0001104659-25-119843-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing discloses cash and cash equivalents of $8.2 million as of September 30, 2025, and shares outstanding totaling...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">7,162,659</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925111671/0001104659-25-111671-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, Hyperion DeFi holds 839,889 HYPE tokens valued at approximately $37.9 million and 877,871 HiHY...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">7,162,659</td>
+                    <td class="number">+1,468,000</td>
+                    <td class="number">+25.78%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925111287/0001104659-25-111287-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Hyperion DeFi, Inc. reports holding approximately 1.72 million HYPE tokens valued at approximately $37.95 million as of ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-11</td>
+                    <td class="number">5,694,659</td>
+                    <td class="number">+91,625</td>
+                    <td class="number">+1.64%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000141057825001740/0001410578-25-001740-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Hyperion DeFi, Inc. holds 1,306,452 HYPE tokens valued at $45.5 million, has 5,694,659 shares outst...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-18</td>
+                    <td class="number">5,603,034</td>
+                    <td class="number">+748,207</td>
+                    <td class="number">+15.41%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925080998/0001104659-25-080998-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing reports on the total shares issued and eligible to vote, citing 5,603,034 shares as of July 18, 2025. No trea...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">4,854,827</td>
+                    <td class="number">-249,528</td>
+                    <td class="number">-4.89%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925077575/0001104659-25-077575-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Hyperion DeFi, Inc. reports a cryptocurrency treasury reserve focused on the HYPE token, accumulating over 1.5 million H...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-20</td>
+                    <td class="number">5,104,355</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925062095/0001104659-25-062095-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Eyenovia, Inc. announced a private placement to build a treasury reserve of 1,000,000 HYPE tokens, becoming one of the f...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$8,200,000</td>
+                    <td>2025-09-30</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925119843/0001104659-25-119843-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2025-09-30</td>
+                </tr>
+                
+                <tr>
+                    <td>venture</td>
+                    <td>Formosa Pharmaceuticals Inc.</td>
+                    <td class="number">$2,000,000</td>
+                    <td>2024-08-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000141057824001425/0001410578-24-001425-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Acquired U.S. rights to a novel formulation for clobetasol propionate ophthalmic suspension.</td>
+                </tr>
+                
+                <tr>
+                    <td>venture</td>
+                    <td>Bausch + Lomb</td>
+                    <td class="number">$3,000,000</td>
+                    <td>2024-08-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000141057824001425/0001410578-24-001425-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Shares issued in connection with the reacquisition of the license.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Formosa Pharmaceuticals, Inc.</td>
+                    <td class="number">$2,000,000</td>
+                    <td>2025-04-15</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000141057825000743/0001410578-25-000743-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Exclusive U.S. rights to commercialize clobetasol propionate ophthalmic suspension.</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>877,871 HiHYPE</td>
+                    <td class="number">N/A</td>
+                    <td>2025-09-30</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1682639/000110465925111671/0001104659-25-111671-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2025-09-30</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

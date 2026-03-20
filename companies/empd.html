@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>EMPD - Empery Digital | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>EMPD - Empery Digital</h1>
+        <div class="subtitle">Primary Asset: BTC | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$4.44</div>
+        </div>
+        <div class="card">
+            <div class="label">BTC Price</div>
+            <div class="value">$70,141.00</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (3,724 BTC)</div>
+            <div class="value">$261.18M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$18.92M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$280.11M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">35,537,243</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: official</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$7.88</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$157.79M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$189.75M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$50.89M</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.56x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.74x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-02-06</td>
+                    <td class="number">3,724</td>
+                    <td class="number">-357</td>
+                    <td class="number">-8.76%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316826000866/0001683168-26-000866-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital Inc. currently holds 3,723.7 BTC as of February 6, 2026, and has repurchased 15,403,738 shares of its com...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">4,081</td>
+                    <td class="number">-0</td>
+                    <td class="number">-0.01%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825008152/0001683168-25-008152-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, Empery Digital Inc. holds 4,081 Bitcoin valued at approximately $334.7 million and an addition...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-29</td>
+                    <td class="number">4,081</td>
+                    <td class="number">+17</td>
+                    <td class="number">+0.41%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825006602/0001683168-25-006602-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital Inc. reported that as of August 29, 2025, it holds approximately 4,081.39 BTC, valued at around $480 mill...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-22</td>
+                    <td class="number">4,065</td>
+                    <td class="number">+13</td>
+                    <td class="number">+0.32%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825006441/0001683168-25-006441-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital Inc. currently holds 4,064.88 BTC valued at approximately $478 million as of August 22, 2025.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-18</td>
+                    <td class="number">4,052</td>
+                    <td class="number">+25</td>
+                    <td class="number">+0.63%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825006265/0001683168-25-006265-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital holds approximately 4,051.90 BTC valued at about $476 million as of August 18, 2025. The company also has...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-12</td>
+                    <td class="number">4,027</td>
+                    <td class="number">+26</td>
+                    <td class="number">+0.65%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825005919/0001683168-25-005919-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital holds 4,026.71 BTC valued at approximately $473 million as of August 12, 2025, with reported cash equival...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-06</td>
+                    <td class="number">4,001</td>
+                    <td class="number">+88</td>
+                    <td class="number">+2.24%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825005684/0001683168-25-005684-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of August 6, 2025, Empery Digital holds approximately 4,000.85 BTC valued at approximately $470 million.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-04</td>
+                    <td class="number">3,913</td>
+                    <td class="number">+110</td>
+                    <td class="number">+2.89%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825005590/0001683168-25-005590-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of August 4, 2025, Empery Digital Inc. holds 3,913.23 BTC valued at approximately $460 million.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-31</td>
+                    <td class="number">3,803</td>
+                    <td class="number">+303</td>
+                    <td class="number">+8.66%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825005537/0001683168-25-005537-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital, formerly Volcon, reported holding 3,803.23 BTC valued at approximately $448 million as of July 31, 2025.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-28</td>
+                    <td class="number">3,500</td>
+                    <td class="number">+317</td>
+                    <td class="number">+9.95%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825005458/0001683168-25-005458-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of July 28, 2025, Volcon, Inc. holds 3,500.18 BTC valued at approximately $412 million.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-25</td>
+                    <td class="number">3,183</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825005371/0001683168-25-005371-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of July 25, 2025, Volcon, Inc. holds 3,183.37 BTC with an aggregate purchase price of approximately $375 million.</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-02-10</td>
+                    <td class="number">35,537,243</td>
+                    <td class="number">-479,254</td>
+                    <td class="number">-1.33%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316826000898/0001683168-26-000898-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 10, 2026, Empery Digital holds 350 BTC as part of collateral arrangements, with a shares outstanding coun...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-06</td>
+                    <td class="number">36,016,497</td>
+                    <td class="number">-1,361,740</td>
+                    <td class="number">-3.64%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316826000866/0001683168-26-000866-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital Inc. currently holds 3,723.7 BTC as of February 6, 2026, and has repurchased 15,403,738 shares of its com...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-30</td>
+                    <td class="number">37,378,237</td>
+                    <td class="number">-336,252</td>
+                    <td class="number">-0.89%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316826000650/0001683168-26-000650-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of January 30, 2026, Empery Digital Inc. reported 37,378,237 shares outstanding after repurchasing approximately 14.0...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-05</td>
+                    <td class="number">37,714,489</td>
+                    <td class="number">-29,964</td>
+                    <td class="number">-0.08%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825008968/0001683168-25-008968-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of December 5, 2025, Empery Digital, Inc. has repurchased 13,705,746 shares of its common stock and currently has 37,...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-28</td>
+                    <td class="number">37,744,453</td>
+                    <td class="number">-799,864</td>
+                    <td class="number">-2.08%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825008737/0001683168-25-008737-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital Inc. provided an update on its share repurchase program, reporting 37,744,453 shares outstanding as of No...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-21</td>
+                    <td class="number">38,544,317</td>
+                    <td class="number">-956,130</td>
+                    <td class="number">-2.42%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825008632/0001683168-25-008632-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital Inc. updated its share repurchase program, revealing that 12.9 million shares have been repurchased as of...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-14</td>
+                    <td class="number">39,500,447</td>
+                    <td class="number">-836,954</td>
+                    <td class="number">-2.07%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825008475/0001683168-25-008475-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital reported 39,500,447 shares outstanding as of November 14, 2025, following significant share repurchases. ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-10</td>
+                    <td class="number">40,337,401</td>
+                    <td class="number">+3,913,538</td>
+                    <td class="number">+10.74%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825008167/0001683168-25-008167-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital reported no specific cryptocurrency treasury holdings in this filing. As of November 10, 2025, the Compan...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-10</td>
+                    <td class="number">36,423,863</td>
+                    <td class="number">-4,835,577</td>
+                    <td class="number">-11.72%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825008152/0001683168-25-008152-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, Empery Digital Inc. holds 4,081 Bitcoin valued at approximately $334.7 million and an addition...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-31</td>
+                    <td class="number">41,259,440</td>
+                    <td class="number">-731,286</td>
+                    <td class="number">-1.74%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825007900/0001683168-25-007900-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of October 31, 2025, Empery Digital has repurchased over 10.1 million shares, resulting in 41,259,440 shares outstand...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-24</td>
+                    <td class="number">41,990,726</td>
+                    <td class="number">-1,290,030</td>
+                    <td class="number">-2.98%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825007778/0001683168-25-007778-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital Inc. announced that as of October 24, 2025, it has repurchased 9,429,509 shares of common stock, resultin...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-17</td>
+                    <td class="number">43,280,756</td>
+                    <td class="number">+23,280,756</td>
+                    <td class="number">+116.40%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825007650/0001683168-25-007650-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of October 17, 2025, Empery Digital, Inc. reported that it has repurchased 8,139,479 shares of its common stock, with...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-10</td>
+                    <td class="number">20,000,000</td>
+                    <td class="number">+626,007</td>
+                    <td class="number">+3.23%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825007518/0001683168-25-007518-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital entered a Master Loan Agreement requiring 250% collateral in Bitcoin for any drawn loans, but no specific...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-05</td>
+                    <td class="number">19,373,993</td>
+                    <td class="number">-25,040,196</td>
+                    <td class="number">-56.38%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825006738/0001683168-25-006738-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of September 5, 2025, Empery Digital Inc. has repurchased 1,626,007 shares under its stock repurchase program, with a...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-12</td>
+                    <td class="number">44,414,189</td>
+                    <td class="number">-3,030,718</td>
+                    <td class="number">-6.39%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825005919/0001683168-25-005919-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Empery Digital holds 4,026.71 BTC valued at approximately $473 million as of August 12, 2025, with reported cash equival...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-08</td>
+                    <td class="number">47,444,907</td>
+                    <td class="number">-2,555,093</td>
+                    <td class="number">-5.11%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825005920/0001683168-25-005920-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Empery Digital Inc. holds approximately 235.8279 BTC valued at $28 million as part of their digital...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-11</td>
+                    <td class="number">50,000,000</td>
+                    <td class="number">+24,901,045</td>
+                    <td class="number">+99.21%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825005160/0001683168-25-005160-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Volcon, Inc. filed an 8-K on July 17, 2025, indicating plans to initiate a Bitcoin treasury strategy utilizing the proce...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-05-06</td>
+                    <td class="number">25,098,955</td>
+                    <td class="number">+6,350,000</td>
+                    <td class="number">+33.87%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316824003059/0001683168-24-003059-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2024, Volcon, Inc. holds no known digital assets in its treasury, has 25,098,955 shares outstanding, a c...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-03-27</td>
+                    <td class="number">18,748,955</td>
+                    <td class="number">+3,118,955</td>
+                    <td class="number">+19.95%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316824001823/0001683168-24-001823-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Volcon, Inc. reported an adjusted total of 18,748,955 outstanding shares as of March 27, 2024, with cash and cash equiva...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-03-01</td>
+                    <td class="number">15,630,000</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316824001259/0001683168-24-001259-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of March 1, 2024, Volcon, Inc. has approximately 15.63 million shares of common stock outstanding, with an additional...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$18,924,529</td>
+                    <td>2025-09-30</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825008167/0001683168-25-008167-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2025-09-30</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Venom EV, LLC</td>
+                    <td class="number">N/A</td>
+                    <td>2025-11-12</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829794/000168316825008167/0001683168-25-008167-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Acquired 10% of shares in exchange for intellectual property assets.</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

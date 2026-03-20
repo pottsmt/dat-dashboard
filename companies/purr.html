@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PURR - Hyperliquid Strategies | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>PURR - Hyperliquid Strategies</h1>
+        <div class="subtitle">Primary Asset: HYPE | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    <div style="background:#f0fff4;border:1px solid #c6f6d5;border-radius:8px;padding:10px 15px;margin-bottom:20px;font-size:13px;color:#22543d;"><strong>Primary Source:</strong> Key metrics (treasury, market cap, mNAV) sourced from <a href="https://www.hypestrat.xyz/dashboard" target="_blank" style="color:#2b6cb0;">www.hypestrat.xyz/dashboard</a></div>
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$5.60</div>
+        </div>
+        <div class="card">
+            <div class="label">HYPE Price</div>
+            <div class="value">$39.39</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (18,600,000 HYPE)</div>
+            <div class="value">$732.65M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$281.90M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$1.01B</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">150,800,000</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: dashboard</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$6.73</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$882.10M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$561.46M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">N/A</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">1.10x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.87x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">12,857,533</td>
+                    <td class="number">+357,533</td>
+                    <td class="number">+2.86%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2078856/000119312526045901/0001193125-26-045901-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of December 31, 2025, Hyperliquid Strategies Inc holds a total of 12,857,533 HYPE tokens valued at approximately $327...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-02</td>
+                    <td class="number">12,500,000</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2078856/000119312525311400/0001193125-25-311400-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of December 2, 2025, Hyperliquid Strategies Inc holds approximately 12,500,000 HYPE tokens and has cash and cash equi...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-02-11</td>
+                    <td class="number">150,600,000</td>
+                    <td class="number">+26,506,952</td>
+                    <td class="number">+21.36%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2078856/000119312526045553/0001193125-26-045553-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Hyperliquid Strategies Inc reported holdings of approximately 17.6 million HYPE tokens valued at $3.276 billion as of De...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">124,093,048</td>
+                    <td class="number">-2,932,515</td>
+                    <td class="number">-2.31%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2078856/000119312526045901/0001193125-26-045901-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of December 31, 2025, Hyperliquid Strategies Inc holds a total of 12,857,533 HYPE tokens valued at approximately $327...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-02</td>
+                    <td class="number">127,025,563</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2078856/000119312525311400/0001193125-25-311400-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of December 2, 2025, Hyperliquid Strategies Inc holds approximately 12,500,000 HYPE tokens and has cash and cash equi...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-02</td>
+                    <td class="number">127,025,563</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2078856/000149315225025886/0001493152-25-025886-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Hyperliquid Strategies Inc completed its business combination with Sonnet BioTherapeutics, resulting in the company's co...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$281,900,000</td>
+                    <td>2025-12-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2078856/000119312526045553/0001193125-26-045553-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2025-12-31</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Company Dashboard, Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

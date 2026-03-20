@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>NAKA - Nakamoto Holdings | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>NAKA - Nakamoto Holdings</h1>
+        <div class="subtitle">Primary Asset: BTC | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$0.24</div>
+        </div>
+        <div class="card">
+            <div class="label">BTC Price</div>
+            <div class="value">$70,141.00</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (1,178 BTC)</div>
+            <div class="value">$379.58M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$24.19M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$403.77M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">683,451,950</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: official</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$0.59</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$164.85M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$349.68M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$209.01M</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.41x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.93x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-12-09</td>
+                    <td class="number">1,178</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315225026862/0001493152-25-026862-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The company holds 1,178 Bitcoin as collateral for a loan agreement, valued at $323.4 million as of December 9, 2025.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-03</td>
+                    <td class="number">1,178</td>
+                    <td class="number">-4,220</td>
+                    <td class="number">-78.18%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315225026862/0001493152-25-026862-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of December 3, 2025, Kindly MD, Inc. holds 1,178 Bitcoin, valued at approximately $323.4 million, as collateral for a...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-12</td>
+                    <td class="number">5,398</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315225024314/0001493152-25-024314-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of November 12, 2025, Kindly MD, Inc. holds 5,398 Bitcoin in its treasury. The company had 439,850,889 shares outstan...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">5,398</td>
+                    <td class="number">-302</td>
+                    <td class="number">-5.30%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315225024260/0001493152-25-024260-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, Kindly MD, Inc. holds 5,398 Bitcoin valued at approximately $615.8 million, has $24.2 million ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-16</td>
+                    <td class="number">5,700</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000121390025087749/0001213900-25-087749-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Kindly MD, Inc. reported establishing a treasury of over 5,700 BTC. The company also committed $30 million to Metaplanet...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-15</td>
+                    <td class="number">5,700</td>
+                    <td class="number">+5,679</td>
+                    <td class="number">+27042.86%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000121390025087749/0001213900-25-087749-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Kindly MD, Inc. has established a Bitcoin treasury of over 5,700 BTC as of September 15, 2025. Additionally, the company...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">21</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000164117225022128/0001641172-25-022128-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Kindly MD, Inc. holds 21 BTC valued at approximately $2,250,566, with total shares outstanding at 7...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-02-25</td>
+                    <td class="number">683,451,950</td>
+                    <td class="number">+251,798,859</td>
+                    <td class="number">+58.33%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315226008131/0001493152-26-008131-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Nakamoto Inc. recently completed its acquisitions of BTC Inc and UTXO Management GP, resulting in a total of 683,451,950...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-23</td>
+                    <td class="number">431,653,091</td>
+                    <td class="number">+4,500,257</td>
+                    <td class="number">+1.05%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315225028290/0001493152-25-028290-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing confirms that Kindly MD, Inc. has 431,653,091 shares of common stock issued and outstanding as of October 23,...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">427,152,834</td>
+                    <td class="number">+419,576,513</td>
+                    <td class="number">+5538.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315225024260/0001493152-25-024260-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">The filing indicates that Kindly MD, Inc. holds 5,398 Bitcoin valued at approximately $615.8 million as of September 30,...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">7,576,321</td>
+                    <td class="number">-2,723,679</td>
+                    <td class="number">-26.44%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000164117225022128/0001641172-25-022128-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Kindly MD, Inc. holds 21 BTC valued at approximately $2,250,566 as part of its treasury assets. Cas...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-19</td>
+                    <td class="number">10,300,000</td>
+                    <td class="number">+4,277,852</td>
+                    <td class="number">+71.04%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000164117225015752/0001641172-25-015752-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Kindly MD, Inc. reported it will utilize proceeds from a recent PIPE financing of $51.5 million to acquire Bitcoin and f...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-31</td>
+                    <td class="number">6,022,148</td>
+                    <td class="number">-7,500</td>
+                    <td class="number">-0.12%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000164117225009328/0001641172-25-009328-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2025, Kindly MD, Inc. has no reported digital asset treasury holdings. The company has 6,022,148 shares ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-27</td>
+                    <td class="number">6,029,648</td>
+                    <td class="number">+52,172</td>
+                    <td class="number">+0.87%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000164117225001314/0001641172-25-001314-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">The company reported holding 6,029,648 shares of common stock outstanding as of March 27, 2025, with a cash and cash equ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-09-30</td>
+                    <td class="number">5,977,476</td>
+                    <td class="number">+30,307</td>
+                    <td class="number">+0.51%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315224044866/0001493152-24-044866-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2024, Kindly MD, Inc. reported cash and cash equivalents of $3,642,944, with 5,977,476 shares outsta...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-08-09</td>
+                    <td class="number">5,947,169</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315224031760/0001493152-24-031760-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2024, Kindly MD, Inc. does not hold any cryptocurrency. The company has 5,947,169 shares outstanding, aft...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-08-09</td>
+                    <td class="number">5,947,169</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315224033245/0001493152-24-033245-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of June 30, 2024, Kindly MD, Inc. reported cash and cash equivalents of $4.74 million and has 5,947,169 shares outsta...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-08-06</td>
+                    <td class="number">5,947,169</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315224044920/0001493152-24-044920-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing provides information on shares outstanding, with 5,947,169 shares reported as of August 6, 2024. No digital a...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-06-30</td>
+                    <td class="number">5,947,169</td>
+                    <td class="number">+7,653</td>
+                    <td class="number">+0.13%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315224031760/0001493152-24-031760-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2024, Kindly MD, Inc. holds no digital asset treasury but has 5,947,169 shares of common stock outstandin...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-06-24</td>
+                    <td class="number">5,939,516</td>
+                    <td class="number">+4,698,606</td>
+                    <td class="number">+378.64%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315224025464/0001493152-24-025464-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2024, Kindly MD, Inc. holds cash and cash equivalents of $287,383. It has issued and outstanding 5,939,5...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-06-03</td>
+                    <td class="number">1,240,910</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315224022816/0001493152-24-022816-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing reports that Kindly MD, Inc. has 1,240,910 shares of common stock outstanding following its initial public of...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$24,185,083</td>
+                    <td>2025-09-30</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315225024260/0001493152-25-024260-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2025-09-30</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Nakamoto Holdings Inc.</td>
+                    <td class="number">$200,000,000</td>
+                    <td>2025-05-12</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000121390025041722/0001213900-25-041722-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">secured convertible notes in Nakomoto Holdings Inc.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Treasury B.V.</td>
+                    <td class="number">$15,000,000</td>
+                    <td>2025-11-19</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315225024260/0001493152-25-024260-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Investment in Treasury B.V. for strategic assets.</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>Metaplanet Inc.</td>
+                    <td class="number">$30,956,627</td>
+                    <td>2025-11-19</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315225024260/0001493152-25-024260-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Investment in Metaplanet as part of Bitcoin strategy.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Treasury</td>
+                    <td class="number">N/A</td>
+                    <td>2025-09-16</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000121390025087749/0001213900-25-087749-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Investment into Dutch Bitcoin treasury company.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Metaplanet</td>
+                    <td class="number">$30,000,000</td>
+                    <td>2025-09-16</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000121390025087749/0001213900-25-087749-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Committed $30M investment into Japan's leading Bitcoin treasury company</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Treasury BV</td>
+                    <td class="number">$15,000,000</td>
+                    <td>2025-11-19</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315225024314/0001493152-25-024314-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Investment in a Bitcoin treasury company based in the Netherlands.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>FUTURE Holdings AG</td>
+                    <td class="number">$6,000,000</td>
+                    <td>2025-11-19</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1946573/000149315225024314/0001493152-25-024314-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Investment in a Bitcoin treasury company based in Switzerland.</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

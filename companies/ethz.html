@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ETHZ - ETHZilla Corporation | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>ETHZ - ETHZilla Corporation</h1>
+        <div class="subtitle">Primary Asset: ETH | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$3.09</div>
+        </div>
+        <div class="card">
+            <div class="label">ETH Price</div>
+            <div class="value">$2,133.16</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (61,650 ETH)</div>
+            <div class="value">$154.51M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">N/A</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$154.51M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">25,251,815</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: vwap_estimate</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$6.12</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$78.03M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$78.03M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">N/A</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.51x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.51x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-03-03</td>
+                    <td class="number">61,650</td>
+                    <td class="number">-4,200</td>
+                    <td class="number">-6.38%</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">Forum Markets, Incorporated currently holds 61,650 ETH on its balance sheet as of March 3, 2026. The company also has a ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-30</td>
+                    <td class="number">65,850</td>
+                    <td class="number">-3,950</td>
+                    <td class="number">-5.66%</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">ETHZilla holds 65,850 ETH per 8-K filing.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-19</td>
+                    <td class="number">69,800</td>
+                    <td class="number">+26,902</td>
+                    <td class="number">+62.71%</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">ETHZilla holds 69,800 ETH per 8-K filing.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">42,898</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></td>
+                    <td class="notes">ETHZilla Corporation reported holding 42,898 ETH valued at \80,933,721 and 6,780,857 liquid staking tokens valued at /,6...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr class="estimated">
+                    <td>2026-03-03</td>
+                    <td class="number">25,251,815</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">No treasury increase (2026-01-30 to 2026-03-03)</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2026-01-30</td>
+                    <td class="number">25,251,815</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">No treasury increase (2025-12-19 to 2026-01-30)</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2025-12-19</td>
+                    <td class="number">25,251,815</td>
+                    <td class="number">+5,950,592</td>
+                    <td class="number">+30.83%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $15.92 | Treasury delta: $94,724,735 (26,902 units @ $3,521.1038 (historical avg)) | +5,950,592 shares est.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-24</td>
+                    <td class="number">19,301,223</td>
+                    <td class="number">-2,097,616</td>
+                    <td class="number">-9.80%</td>
+                    <td>official</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">ETHZilla Corporation cancelled 2,099,741 treasury shares as part of a share repurchase program, resulting in 19,301,223 ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-12</td>
+                    <td class="number">21,398,839</td>
+                    <td class="number">-138,601,161</td>
+                    <td class="number">-86.63%</td>
+                    <td>official</td>
+                    <td><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></td>
+                    <td class="notes">ETHZilla Corporation reported holding 42,898 ETH valued at $180,933,721 and 6,780,857 liquid staking tokens valued at $2...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-14</td>
+                    <td class="number">160,000,000</td>
+                    <td class="number">-176,122</td>
+                    <td class="number">-0.11%</td>
+                    <td>official</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">The filing discusses a reverse stock split reducing shares from approximately 160 million to approximately 16 million. N...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">160,176,122</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">As of September 26, 2025, ETHZilla Corporation holds 102,273 ETH valued at approximately $404 million, and reported tota...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-19</td>
+                    <td class="number">160,176,122</td>
+                    <td class="number">-500,000</td>
+                    <td class="number">-0.31%</td>
+                    <td>official</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">ETHZilla Corporation reported treasury holdings of 102,264 ETH valued at approximately $462 million and cash and cash eq...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-12</td>
+                    <td class="number">160,676,122</td>
+                    <td class="number">-3,750,000</td>
+                    <td class="number">-2.28%</td>
+                    <td>official</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">ETHZilla Corporation reported total holdings of 102,255 ETH valued at approximately $460 million as of September 12, 202...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-07</td>
+                    <td class="number">164,426,122</td>
+                    <td class="number">-2,200,723</td>
+                    <td class="number">-1.32%</td>
+                    <td>official</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">ETHZilla holds a total of 102,246 ETH valued at approximately $443 million as of September 7, 2025, with $213 million in...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-01</td>
+                    <td class="number">166,626,845</td>
+                    <td class="number">+1,148,190</td>
+                    <td class="number">+0.69%</td>
+                    <td>official</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">ETHZilla Corporation holds 102,246 ETH valued at approximately $456 million as of August 31, 2025. The company has 166,6...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-22</td>
+                    <td class="number">165,478,655</td>
+                    <td class="number">+11,446,655</td>
+                    <td class="number">+7.43%</td>
+                    <td>official</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">As of August 25, 2025, ETHZilla Corporation holds a total of 102,237 ETH valued at approximately $489 million and has ca...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-05</td>
+                    <td class="number">154,032,000</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">As of August 11, 2025, 180 Life Sciences Corp. holds 82,186 ETH valued at approximately $349 million and has cash equiva...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">N/A</td>
+                    <td>2025-12-30</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">Post convertible note redemption (Dec 30, 2025). Paid $605.7M to redeem all notes. Cash likely depleted.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Satschel, Inc.</td>
+                    <td class="number">$15,000,000</td>
+                    <td>2025-10-23</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">Acquired a 15% stake in Satschel, Inc. ($5 million in cash and $10 million in equity)</td>
+                </tr>
+                
+                <tr>
+                    <td>venture</td>
+                    <td>Liquidity.io</td>
+                    <td class="number">$12,100,000</td>
+                    <td>2026-02-12</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">Investment in a regulated financial institution for tokenization.</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>6,780,857 Liquid Staking Tokens</td>
+                    <td class="number">N/A</td>
+                    <td>2025-09-30</td>
+                    <td><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></td>
+                    <td class="notes">Per 10-Q as of 2025-09-30</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>Karus, Inc.</td>
+                    <td class="number">$8,000,000</td>
+                    <td>2025-12-03</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">Acquired a 20% fully-diluted interest through stock purchase agreements.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Zippy, Inc.</td>
+                    <td class="number">N/A</td>
+                    <td>2026-02-05</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">Acquisition of approximately 15% of the fully diluted ownership of Zippy, Inc.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Tokenized Aviation Assets</td>
+                    <td class="number">$12,200,000</td>
+                    <td>2026-02-12</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">ETHZilla acquired two CFM56 commercial jet engines for tokenization, valued at approximately $12.2 million.</td>
+                </tr>
+                
+                <tr>
+                    <td>debt_override</td>
+                    <td>Convertible Notes (REDEEMED)</td>
+                    <td class="number">N/A</td>
+                    <td>2025-12-30</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">All convertible notes fully redeemed Dec 30, 2025 per 8-K. Total paid: $605.7M (117% principal + interest).</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Eurus Aero Token I</td>
+                    <td class="number">$12,200,000</td>
+                    <td>2026-02-12</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">Tokenized real-world asset instrument backed by jet engines leased to a leading US air carrier.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>CFM56 commercial jet engines</td>
+                    <td class="number">$12,200,000</td>
+                    <td>2026-02-12</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">Acquired two engines for tokenized asset offering.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Two CFM56 commercial jet engines</td>
+                    <td class="number">$12,200,000</td>
+                    <td>2026-02-12</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">Acquisition for the Eurus Aero Token I, token secured by the engines.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>CFM56 Commercial Jet Engines</td>
+                    <td class="number">$12,200,000</td>
+                    <td>2026-02-12</td>
+                    <td><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></td>
+                    <td class="notes">Acquired two CFM56 commercial jet engines for tokenization and leasing.</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

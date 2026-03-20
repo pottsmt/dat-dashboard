@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ALTS - ALT5 Sigma Corp | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>ALTS - ALT5 Sigma Corp</h1>
+        <div class="subtitle">Primary Asset: WLFI | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$1.39</div>
+        </div>
+        <div class="card">
+            <div class="label">WLFI Price</div>
+            <div class="value">$0.09</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (7,300,000,000 WLFI)</div>
+            <div class="value">$1.05B</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$14.20M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$1.06B</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">126,339,124</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: official</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$8.41</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$175.74M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$179.34M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$17.81M</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.17x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.18x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-02-02</td>
+                    <td class="number">7,300,000,000</td>
+                    <td class="number">+11,424,350</td>
+                    <td class="number">+0.16%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000149315226004616/0001493152-26-004616-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">ALT5 Sigma Corporation holds approximately 7.3 billion $WLFI tokens. The company currently has $14.2 million in cash equ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-27</td>
+                    <td class="number">7,288,575,650</td>
+                    <td class="number">+7,288,555,650</td>
+                    <td class="number">+36442778.25%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000162828026001793/0001628280-26-001793-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">ALT5 Sigma Corporation holds a significant treasury of digital assets, mainly consisting of WLFI tokens totaling approxi...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-12-28</td>
+                    <td class="number">20,000</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000162828025015469/0001628280-25-015469-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">The company holds 5,000 Bitcoin and 20,000 Ethereum as digital asset treasury, with total values reported of approximate...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-02-19</td>
+                    <td class="number">126,339,124</td>
+                    <td class="number">+249,495</td>
+                    <td class="number">+0.20%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000149315226007685/0001493152-26-007685-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing includes confirmation of 126,339,124 shares outstanding as of February 19, 2026, with no specific digital ass...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-27</td>
+                    <td class="number">126,089,629</td>
+                    <td class="number">+1,142,901</td>
+                    <td class="number">+0.91%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000162828026001793/0001628280-26-001793-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">ALT5 Sigma Corporation holds a significant treasury of digital assets, mainly consisting of WLFI tokens totaling approxi...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-04</td>
+                    <td class="number">124,946,728</td>
+                    <td class="number">+2,337,352</td>
+                    <td class="number">+1.91%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000164117225026602/0001641172-25-026602-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">ALT5 Sigma Corporation holds approximately 7.28 billion $WLFI tokens valued at approximately $1.31 billion as of Septemb...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-28</td>
+                    <td class="number">122,609,376</td>
+                    <td class="number">+105,154,716</td>
+                    <td class="number">+602.44%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000162828025039914/0001628280-25-039914-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">The company reported cash and cash equivalents of $9.56 million as of June 28, 2025, and has 122,609,376 shares of commo...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-29</td>
+                    <td class="number">17,454,660</td>
+                    <td class="number">+1,376,013</td>
+                    <td class="number">+8.56%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000162828025025004/0001628280-25-025004-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">ALT5 Sigma Corporation's quarterly report for Q1 2025 shows cash and cash equivalents of approximately $10.8 million, wi...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-12-28</td>
+                    <td class="number">16,078,647</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000162828025015469/0001628280-25-015469-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">The company holds 5,000 Bitcoin and 20,000 Ethereum as digital asset treasury, with total values reported of approximate...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$14,200,000</td>
+                    <td>2026-01-29</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000149315226004616/0001493152-26-004616-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2026-01-29</td>
+                </tr>
+                
+                <tr>
+                    <td>venture</td>
+                    <td>Soin Therapeutics LLC</td>
+                    <td class="number">$13,000,000</td>
+                    <td>2024-04-08</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000162828024015260/0001628280-24-015260-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Acquired a product that is being developed for treatment of CRPS, potentially increasing to $30M depending on performance.</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>5,000 BTC</td>
+                    <td class="number">$350,705,000</td>
+                    <td>2024-12-28</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000162828025015469/0001628280-25-015469-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2024-12-28</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>20,000 ETH</td>
+                    <td class="number">$42,663,200</td>
+                    <td>2024-12-28</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000162828025015469/0001628280-25-015469-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2024-12-28</td>
+                </tr>
+                
+                <tr>
+                    <td>venture</td>
+                    <td>Qodex Technologies</td>
+                    <td class="number">$2,200,000</td>
+                    <td>2025-03-28</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000162828025015469/0001628280-25-015469-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Acquired cryptocurrency exchange software platform.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Mswipe</td>
+                    <td class="number">$6,100,000</td>
+                    <td>2025-07-23</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000162828025035754/0001628280-25-035754-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Mswipe acquisition valued at Historical NOCP of $6.10 per share.</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>7,283,585,650 $WLFI</td>
+                    <td class="number">N/A</td>
+                    <td>2025-09-04</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000164117225026602/0001641172-25-026602-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2025-09-04</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>4,686,513 USDC</td>
+                    <td class="number">N/A</td>
+                    <td>2025-09-27</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/862861/000162828026001793/0001628280-26-001793-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2025-09-27</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

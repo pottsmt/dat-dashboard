@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ETHM - The Ether Machine | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>ETHM - The Ether Machine</h1>
+        <div class="subtitle">Primary Asset: ETH | Generated: 2026-02-25 07:56:17 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Treasury Holdings</div>
+            <div class="value">150,000 ETH</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury Value (NAV)</div>
+            <div class="value">$293.30M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">22,213,333</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: official</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$26.44</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$231.02M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$230.54M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">N/A</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$482.35K</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.39x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV (EV/NAV)</div>
+            <div class="value">0.39x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-09-08</td>
+                    <td class="number">150,000</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2028699/000121390025086219/0001213900-25-086219-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Dynamix Corporation reported treasury holdings of 150,000 ETH valued at approximately $65,556,900 as of September 8, 202...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-02</td>
+                    <td class="number">150,000</td>
+                    <td class="number">-195,362</td>
+                    <td class="number">-56.57%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2028699/000121390025082962/0001213900-25-082962-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The Ether Machine raised an additional 150,000 ETH, valued at approximately $654 million, from Jeffrey Berns, bringing i...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-04</td>
+                    <td class="number">345,362</td>
+                    <td class="number">+175,378</td>
+                    <td class="number">+103.17%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2028699/000121390025070903/0001213900-25-070903-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Dynamix Corporation's subsidiary has acquired a total of 345,362 ETH as of August 4, 2025, valued at approximately $1.30...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-21</td>
+                    <td class="number">169,984</td>
+                    <td class="number">-230,016</td>
+                    <td class="number">-57.50%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2028699/000121390025067776/0001213900-25-067776-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Dynamix Corporation is set to acquire 169,984 Ether as part of its agreements, with additional investments noted includi...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-20</td>
+                    <td class="number">400,000</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2028699/000121390025065907/0001213900-25-065907-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The Ether Machine is expected to manage over 400,000 ETH at a value of approximately $1.52 billion, in addition to $170 ...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">22,213,333</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2028699/000121390025107239/0001213900-25-107239-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, Dynamix Corporation reported cash and equivalents of $482,352, total basic shares outstanding ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">22,213,333</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2028699/000121390025075657/0001213900-25-075657-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Dynamix Corporation holds cash and cash equivalents of $1,040,643, has 22,213,333 shares outstandin...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$482,352</td>
+                    <td>2025-09-30</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2028699/000121390025107239/0001213900-25-107239-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2025-09-30</td>
+                </tr>
+                
+                <tr>
+                    <td>venture</td>
+                    <td>ETH Partners</td>
+                    <td class="number">$646,000,000</td>
+                    <td>2025-07-21</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2028699/000121390025065907/0001213900-25-065907-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">contribution of approximately 169,984 ETH from Andrew Keys</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Company Unit Subscription</td>
+                    <td class="number">$97,000,000</td>
+                    <td>2025-07-25</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2028699/000121390025067776/0001213900-25-067776-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Company Unit Investors agreed to purchase Company Class A Units for $97,000,000 in cash and a contribution of 35,615.11 Ether.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Equity PIPE Subscription</td>
+                    <td class="number">$197,100,000</td>
+                    <td>2025-07-25</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/2028699/000121390025067776/0001213900-25-067776-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Investors agreed to purchase shares of Pubco Class A Stock for $197,100,000 in cash and a contribution of 67,121 Ether.</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

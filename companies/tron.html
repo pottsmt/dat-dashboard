@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TRON - Tron Inc | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>TRON - Tron Inc</h1>
+        <div class="subtitle">Primary Asset: TRX | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$1.97</div>
+        </div>
+        <div class="card">
+            <div class="label">TRX Price</div>
+            <div class="value">$0.31</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (681,200,000 TRX)</div>
+            <div class="value">$208.99M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$10.60M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$219.59M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">275,289,351</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: vwap_estimate</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$0.80</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$542.32M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$532.45M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$736.41K</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">2.47x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">2.47x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-02-12</td>
+                    <td class="number">681,200,000</td>
+                    <td class="number">+4,200,000</td>
+                    <td class="number">+0.62%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000149315226006323/0001493152-26-006323-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Tron Inc. reported holding over 681.2 million TRX tokens as of February 12, 2026, reinforcing its strategy in the TRON e...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-22</td>
+                    <td class="number">677,000,000</td>
+                    <td class="number">-596,800</td>
+                    <td class="number">-0.09%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000149315226003321/0001493152-26-003321-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of January 22, 2026, Tron Inc. holds over 677 million TRX tokens as part of its treasury. No specific USD values for ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">677,596,800</td>
+                    <td class="number">+365,096,700</td>
+                    <td class="number">+116.83%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000149315225021526/0001493152-25-021526-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, Tron Inc. holds 677,596,800 TRX tokens valued at approximately $228.42 million, with total cas...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-02</td>
+                    <td class="number">312,500,100</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000164117225026144/0001641172-25-026144-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Tron Inc. expanded its TRX treasury holdings with the addition of 312.5 million TRX tokens valued over $220 million as o...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-29</td>
+                    <td class="number">312,500,100</td>
+                    <td class="number">-52,499,900</td>
+                    <td class="number">-14.38%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000164117225026127/0001641172-25-026127-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Tron Inc. holds 312,500,100 TRX tokens, valued at $110 million, as of August 29, 2025. The company issued 220,000,000 sh...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-11</td>
+                    <td class="number">365,000,000</td>
+                    <td class="number">-96,845</td>
+                    <td class="number">-0.03%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000164117225019830/0001641172-25-019830-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Tron Inc., formerly SRM Entertainment, announced a strategic focus on TRON treasury management, currently holding over 3...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">365,096,845</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000164117225017055/0001641172-25-017055-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SRM Entertainment, Inc. reported treasury holdings of 365,096,845 TRON tokens as of June 30, 2025. No other treasury-rel...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-28</td>
+                    <td class="number">365,096,845</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000164117225022765/0001641172-25-022765-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Tron Inc. holds 365,096,845 TRX tokens valued at $100 million, has $5,298,142 in cash, and 33,468,0...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr class="estimated">
+                    <td>2026-02-12</td>
+                    <td class="number">275,289,351</td>
+                    <td class="number">+907,287</td>
+                    <td class="number">+0.33%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $1.34 | Treasury delta: $1,211,440 (4,200,000 units @ $0.2884 (historical avg)) | +907,287 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2026-01-22</td>
+                    <td class="number">274,382,064</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">No treasury increase (2025-09-30 to 2026-01-22)</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-24</td>
+                    <td class="number">274,382,064</td>
+                    <td class="number">+17,266,664</td>
+                    <td class="number">+6.72%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000149315225029225/0001493152-25-029225-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Tron Inc. reports having 274,382,064 shares outstanding following a stock purchase agreement. No specific digital asset ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-18</td>
+                    <td class="number">257,115,400</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000149315225028353/0001493152-25-028353-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of November 18, 2025, Tron Inc. reported 257,115,400 shares of common stock outstanding. No treasury holdings, cash, ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">257,115,400</td>
+                    <td class="number">+223,647,389</td>
+                    <td class="number">+668.24%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000149315225021526/0001493152-25-021526-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, Tron Inc. holds 677,596,800 TRX tokens valued at approximately $228.42 million, with total cas...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-07</td>
+                    <td class="number">33,468,011</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000164117225022765/0001641172-25-022765-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Tron Inc. holds 365,096,845 TRX tokens valued at $100 million, has $5,298,142 in cash, and 33,468,0...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$10,603,681</td>
+                    <td>2025-09-30</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000149315225021526/0001493152-25-021526-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2025-09-30</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>Gameverse Interactive Corp</td>
+                    <td class="number">$190,500</td>
+                    <td>2025-11-10</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000149315225021526/0001493152-25-021526-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Acquired shares from the exchange of restricted common stock.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>TRON Token</td>
+                    <td class="number">$100,000,000</td>
+                    <td>2025-06-16</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1956744/000164117225015183/0001641172-25-015183-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Equity investment for TRON Treasury Strategy.</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

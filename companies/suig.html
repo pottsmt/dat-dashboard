@@ -1,0 +1,555 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SUIG - SUI Group Holdings | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>SUIG - SUI Group Holdings</h1>
+        <div class="subtitle">Primary Asset: SUI | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$1.40</div>
+        </div>
+        <div class="card">
+            <div class="label">SUI Price</div>
+            <div class="value">$0.97</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (108,368,594 SUI)</div>
+            <div class="value">$116.62M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$21.94M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$138.56M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">80,010,460</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: official</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$1.73</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$112.01M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$90.08M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">N/A</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.81x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.81x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-02-23</td>
+                    <td class="number">108,368,594</td>
+                    <td class="number">+270,158</td>
+                    <td class="number">+0.25%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495426001610/0001654954-26-001610-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 23, 2026, Sui Group Holdings holds 108,368,594 SUI tokens. They have also utilized $10 million of digital...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-07</td>
+                    <td class="number">108,098,436</td>
+                    <td class="number">+3,098,436</td>
+                    <td class="number">+2.95%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495426000201/0001654954-26-000201-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of January 7, 2026, Sui Group Holdings Limited holds 108,098,436 SUI tokens valued at approximately $196 million. The...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">105,000,000</td>
+                    <td class="number">-1,000,000</td>
+                    <td class="number">-0.94%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495426001672/0001654954-26-001672-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Sui Group Holdings Limited holds 105 million SUI tokens valued at approximately $147 million as of December 31, 2025, al...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">106,000,000</td>
+                    <td class="number">+96,000,000</td>
+                    <td class="number">+960.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495425012949/0001654954-25-012949-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, SUI Group Holdings holds 106 million SUI tokens valued at $344.5 million, along with $42.7 mil...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-12-31</td>
+                    <td class="number">10,000,000</td>
+                    <td class="number">-6,961,766</td>
+                    <td class="number">-41.04%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495425002487/0001654954-25-002487-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of December 31, 2024, Mill City Ventures III, Ltd. holds commitments in Mustang Litigation Funding valued at approxim...</td>
+                </tr>
+                
+                <tr>
+                    <td>2023-12-31</td>
+                    <td class="number">16,961,766</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495424004122/0001654954-24-004122-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of December 31, 2023, the company holds several treasury assets, including $10,000,000 in Mustang Litigation Funding,...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-02-26</td>
+                    <td class="number">80,010,460</td>
+                    <td class="number">-79,540</td>
+                    <td class="number">-0.10%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495426001610/0001654954-26-001610-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 23, 2026, Sui Group Holdings holds 108,368,594 SUI tokens. They have also utilized $10 million of digital...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-07</td>
+                    <td class="number">80,090,000</td>
+                    <td class="number">+3,287,128</td>
+                    <td class="number">+4.28%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495426000201/0001654954-26-000201-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of January 7, 2026, Sui Group Holdings Limited holds 108,098,436 SUI tokens valued at approximately $196 million. The...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">76,802,872</td>
+                    <td class="number">-6,265,996</td>
+                    <td class="number">-7.54%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495426001672/0001654954-26-001672-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Sui Group Holdings Limited holds 105 million SUI tokens valued at approximately $147 million as of December 31, 2025, al...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">83,068,868</td>
+                    <td class="number">-5,431,132</td>
+                    <td class="number">-6.14%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495425012949/0001654954-25-012949-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, SUI Group Holdings holds 106 million SUI tokens valued at $344.5 million, along with $42.7 mil...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-23</td>
+                    <td class="number">88,500,000</td>
+                    <td class="number">+68,820,000</td>
+                    <td class="number">+349.70%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000121390025091783/0001213900-25-091783-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Sui Group Holdings reported treasury holdings of 105,630,660 SUI valued at approximately $359 million as of September 23...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-12</td>
+                    <td class="number">19,680,000</td>
+                    <td class="number">+13,617,227</td>
+                    <td class="number">+224.60%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000121390025087368/0001213900-25-087368-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing reports that Sui Group Holdings Limited has completed a $2 million stock repurchase program and authorized a ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">6,062,773</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495425009666/0001654954-25-009666-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Mill City Ventures III, Ltd. reports holding 6,062,773 shares of common stock outstanding, a cash b...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-31</td>
+                    <td class="number">6,062,773</td>
+                    <td class="number">-322,482</td>
+                    <td class="number">-5.05%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495425005448/0001654954-25-005448-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2025, Mill City Ventures III, Ltd. holds no cryptocurrency in its treasury, has 6,062,773 shares of comm...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-12-31</td>
+                    <td class="number">6,385,255</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495425002487/0001654954-25-002487-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of December 31, 2024, Mill City Ventures III, Ltd. holds commitments in Mustang Litigation Funding valued at approxim...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-09-30</td>
+                    <td class="number">6,385,255</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495424014099/0001654954-24-014099-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2024, Mill City Ventures III, Ltd. holds 6,385,255 shares outstanding with a cash balance of $3,132,...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-06-30</td>
+                    <td class="number">6,385,255</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495424010649/0001654954-24-010649-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2024, Mill City Ventures III, Ltd. holds no digital assets and has 6,385,255 shares of common stock outst...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-03-31</td>
+                    <td class="number">6,385,255</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495424006409/0001654954-24-006409-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2024, the company holds no cryptocurrency, has 6,385,255 shares of common stock outstanding and $504,725...</td>
+                </tr>
+                
+                <tr>
+                    <td>2023-12-31</td>
+                    <td class="number">6,385,255</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495424004122/0001654954-24-004122-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of December 31, 2023, the company holds several treasury assets, including $10,000,000 in Mustang Litigation Funding,...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>digital_asset</td>
+                    <td>200,000 Common Stock</td>
+                    <td class="number">N/A</td>
+                    <td>2023-12-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495424004122/0001654954-24-004122-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2023-12-31</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>16,961,766 ST Non-banking Loans</td>
+                    <td class="number">N/A</td>
+                    <td>2023-12-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495424004122/0001654954-24-004122-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2023-12-31</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>265,000 Preferred Stock</td>
+                    <td class="number">N/A</td>
+                    <td>2023-12-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495424004122/0001654954-24-004122-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2023-12-31</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>10,000 Other Equity</td>
+                    <td class="number">N/A</td>
+                    <td>2023-12-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495424004122/0001654954-24-004122-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2023-12-31</td>
+                </tr>
+                
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$21,936,274</td>
+                    <td>2025-12-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495426001672/0001654954-26-001672-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2025-12-31</td>
+                </tr>
+                
+                <tr>
+                    <td>venture</td>
+                    <td>Mustang Litigation Funding</td>
+                    <td class="number">$10,000,000</td>
+                    <td>2024-04-02</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495424004122/0001654954-24-004122-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">$10 million invested in Mustang Funding, LLC, due to mature on May 31, 2024.</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>10,000,000 Mustang Litigation Funding</td>
+                    <td class="number">N/A</td>
+                    <td>2024-12-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495425002487/0001654954-25-002487-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2024-12-31</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>Investment in Alatus Development Corp</td>
+                    <td class="number">$2,016,636</td>
+                    <td>2025-03-10</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495425002487/0001654954-25-002487-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Investment in a real estate secured loan</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>SUI cryptocurrency</td>
+                    <td class="number">$441,000,000</td>
+                    <td>2025-07-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495425008758/0001654954-25-008758-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Acquisition from the private placement, value based on assumption of 98% of net proceeds for SUI treasury.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>suiUSDe Vault</td>
+                    <td class="number">$10,000,000</td>
+                    <td>2026-02-11</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495426001105/0001654954-26-001105-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The vault operated by Ember Protocol is seeded with $10 million in newly minted suiUSDe.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>eSui Dollar (suiUSDe)</td>
+                    <td class="number">$10,000,000</td>
+                    <td>2026-02-26</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495426001610/0001654954-26-001610-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Deployed into a yield-generating vault operated by Ember Protocol.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Mustang Funding, LLC</td>
+                    <td class="number">$10,000,000</td>
+                    <td>2026-02-27</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1425355/000165495426001672/0001654954-26-001672-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Loan to Mustang Funding, LLC.</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

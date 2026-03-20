@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ORBS - Eightco Holdings | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>ORBS - Eightco Holdings</h1>
+        <div class="subtitle">Primary Asset: WLD | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$0.92</div>
+        </div>
+        <div class="card">
+            <div class="label">WLD Price</div>
+            <div class="value">$0.32</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (277,222,975 WLD)</div>
+            <div class="value">$366.04M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$76.00M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$442.04M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">361,701,240</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: vwap_estimate</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$1.22</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$332.15M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$266.80M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$10.65M</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.75x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.78x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-03-20</td>
+                    <td class="number">277,222,975</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315226011742/0001493152-26-011742-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Eightco Holdings Inc. reported holdings of 277,222,975 WLD tokens, 11,068 ETH, and $76 million in cash and stablecoins a...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-03-05</td>
+                    <td class="number">277,222,975</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315226009060/0001493152-26-009060-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of March 5, 2026, Eightco holds 277,222,975 WLD tokens and 11,068 ETH, along with $82 million in cash.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-30</td>
+                    <td class="number">277,222,975</td>
+                    <td class="number">+4,969,077</td>
+                    <td class="number">+1.83%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315225029714/0001493152-25-029714-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Eightco Holdings Inc. reported treasury holdings of 277,222,975 WLD and 11,068 ETH as of December 30, 2025, with cash an...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-17</td>
+                    <td class="number">272,253,898</td>
+                    <td class="number">+65,130,104</td>
+                    <td class="number">+31.45%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315225024002/0001493152-25-024002-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of November 17, 2025, Eightco Holdings Inc. holds 272,253,898 WLD tokens, 11,068 ETH, and has $58.2 million in cash a...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">207,123,794</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315225023549/0001493152-25-023549-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, Eightco Holdings Inc. holds approximately 207.1 million WLD tokens, 6,819 ETH, and 1 stablecoi...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr class="estimated">
+                    <td>2026-03-12</td>
+                    <td class="number">361,701,240</td>
+                    <td class="number">+154,511,743</td>
+                    <td class="number">+74.58%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">$125M new funding commitments (BMNR $75M, ARK $25M, Payward $25M) / $0.809 (3/11 close) = +154,511,743 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2026-03-05</td>
+                    <td class="number">207,189,497</td>
+                    <td class="number">+8,113,468</td>
+                    <td class="number">+4.08%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $1.58 | Cash increase: $12,800,000 ($69,200,000 -> $82,000,000) | +8,113,468 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2025-12-30</td>
+                    <td class="number">199,076,029</td>
+                    <td class="number">+1,006,881</td>
+                    <td class="number">+0.51%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $2.43 | Treasury delta: $2,447,830 (4,969,077 units @ $0.4926 (historical avg)) | +1,006,881 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2025-11-17</td>
+                    <td class="number">198,069,148</td>
+                    <td class="number">+10,808,177</td>
+                    <td class="number">+5.77%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $7.73 | Treasury delta: $83,556,176 (65,130,104 units @ $1.2829 (historical avg)) | +10,808,177 shares est.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">187,260,971</td>
+                    <td class="number">+8,976,318</td>
+                    <td class="number">+5.03%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315225023549/0001493152-25-023549-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, Eightco Holdings Inc. holds approximately 207.1 million WLD tokens, 6,819 ETH, and 1 stablecoi...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-10</td>
+                    <td class="number">178,284,653</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315225013003/0001493152-25-013003-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Eightco Holdings Inc. has conducted a private placement expected to result in $270 million in proceeds, which will prima...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-09</td>
+                    <td class="number">178,284,653</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315225013003/0001493152-25-013003-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Eightco Holdings Inc. announced a private placement generating approximately $270 million, primarily to acquire and hold...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$76,000,000</td>
+                    <td>2026-03-20</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315226011742/0001493152-26-011742-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2026-03-20</td>
+                </tr>
+                
+                <tr>
+                    <td>venture</td>
+                    <td>Mythical Games</td>
+                    <td class="number">N/A</td>
+                    <td>2025-10-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315225017909/0001493152-25-017909-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strategic investment to support authentication and trust layer in gaming.</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>11,068 ETH</td>
+                    <td class="number">$23,609,815</td>
+                    <td>2026-03-20</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315226011742/0001493152-26-011742-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2026-03-20</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>OpenAI Group PBC</td>
+                    <td class="number">$50,000,000</td>
+                    <td>2026-03-12</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315226009788/0001493152-26-009788-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strategic investment in OpenAI. Per 8-K filed 2026-03-12.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Beast Industries Co.</td>
+                    <td class="number">$25,000,000</td>
+                    <td>2026-03-12</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315226009788/0001493152-26-009788-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Investment of $25M in MrBeast / Beast Industries. Per 8-K filed 2026-03-12.</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>277,222,975 WLD</td>
+                    <td class="number">$88,714,956</td>
+                    <td>2026-03-20</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315226011742/0001493152-26-011742-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2026-03-20</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>OpenAI</td>
+                    <td class="number">$90,000,000</td>
+                    <td>2026-03-20</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1892492/000149315226011742/0001493152-26-011742-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Total investment of more than $90 million for preferred stock.</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

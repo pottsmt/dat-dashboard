@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SBET - SharpLink Gaming | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>SBET - SharpLink Gaming</h1>
+        <div class="subtitle">Primary Asset: ETH | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    <div style="background:#f0fff4;border:1px solid #c6f6d5;border-radius:8px;padding:10px 15px;margin-bottom:20px;font-size:13px;color:#22543d;"><strong>Primary Source:</strong> Key metrics (treasury, market cap, mNAV) sourced from <a href="https://www.sharplink.com/eth-dashboard" target="_blank" style="color:#2b6cb0;">www.sharplink.com/eth-dashboard</a></div>
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$7.52</div>
+        </div>
+        <div class="card">
+            <div class="label">ETH Price</div>
+            <div class="value">$2,133.16</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (869,647 ETH)</div>
+            <div class="value">$1.86B</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$28.54K</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$1.86B</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">216,881,182</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: dashboard</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$8.56</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$1.63B</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$1.61B</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">N/A</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.88x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.87x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-02-15</td>
+                    <td class="number">867,798</td>
+                    <td class="number">+227,772</td>
+                    <td class="number">+35.59%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315226007427/0001493152-26-007427-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Sharplink, Inc. reported ETH holdings of 867,798 ETH valued at approximately $1.72 billion as of February 15, 2026.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">640,026</td>
+                    <td class="number">-224,571</td>
+                    <td class="number">-25.97%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315226009214/0001493152-26-009214-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Sharplink, Inc. significantly shifted to an ETH-centered treasury strategy as of June 2025, holding approximately 640,02...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">864,597</td>
+                    <td class="number">+1,173</td>
+                    <td class="number">+0.14%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315226009305/0001493152-26-009305-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Sharplink, Inc. reported holding 864,597 ETH as of December 31, 2025, with $28.5 million in cash. No shares outstanding ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-14</td>
+                    <td class="number">863,424</td>
+                    <td class="number">+21,340</td>
+                    <td class="number">+2.53%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315225028063/0001493152-25-028063-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming, Inc. holds 863,424 ETH as of December 14, 2025, consisting of native ETH and ETH as-if redeemed from L...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-09</td>
+                    <td class="number">842,084</td>
+                    <td class="number">-17,769</td>
+                    <td class="number">-2.07%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315225022012/0001493152-25-022012-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming, Inc. reported an ETH treasury of approximately 842,084 tokens valued at roughly $3.0 billion as of Nov...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-19</td>
+                    <td class="number">859,853</td>
+                    <td class="number">+19,729</td>
+                    <td class="number">+2.35%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315225018731/0001493152-25-018731-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming, Inc. reported total ETH holdings of 859,853 as of October 19, 2025, valued at approximately $3.5 billi...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-15</td>
+                    <td class="number">840,124</td>
+                    <td class="number">+259,283</td>
+                    <td class="number">+44.64%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315225018379/0001493152-25-018379-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming, Inc. reported holding 840,124 ETH as of October 15, 2025. The company recently raised $76.5 million th...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">580,841</td>
+                    <td class="number">-257,159</td>
+                    <td class="number">-30.69%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315225021970/0001493152-25-021970-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, SharpLink Gaming holds 580,841 ETH valued at approximately $2.41 billion and 236,906 LsETH val...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-25</td>
+                    <td class="number">838,000</td>
+                    <td class="number">-152</td>
+                    <td class="number">-0.02%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315225014866/0001493152-25-014866-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming, Inc. holds more than 838,000 ETH as of September 25, 2025, positioning itself as one of the largest co...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-14</td>
+                    <td class="number">838,152</td>
+                    <td class="number">+922</td>
+                    <td class="number">+0.11%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315225013634/0001493152-25-013634-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of September 14, 2025, SharpLink Gaming holds 838,152 ETH valued at approximately $3.86 billion, with a recent repurc...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-31</td>
+                    <td class="number">837,230</td>
+                    <td class="number">+39,526</td>
+                    <td class="number">+4.95%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315225012518/0001493152-25-012518-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming, Inc. reported treasury holdings of 837,230 ETH as of August 31, 2025, valued at over $3.6 billion. The...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-24</td>
+                    <td class="number">797,704</td>
+                    <td class="number">+56,944</td>
+                    <td class="number">+7.69%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225025469/0001641172-25-025469-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming reported ETH holdings of 797,704 valued at approximately $3.7 billion as of August 24, 2025. The compan...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-17</td>
+                    <td class="number">740,760</td>
+                    <td class="number">+141,960</td>
+                    <td class="number">+23.71%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225024734/0001641172-25-024734-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming reported total ETH holdings of 740,760 as of August 17, 2025, with an estimated value of approximately ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-10</td>
+                    <td class="number">598,800</td>
+                    <td class="number">+76,861</td>
+                    <td class="number">+14.73%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225023115/0001641172-25-023115-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of August 10, 2025, SharpLink Gaming holds approximately 598,800 ETH valued at over $3 billion, following a recent $4...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-03</td>
+                    <td class="number">521,939</td>
+                    <td class="number">+83,749</td>
+                    <td class="number">+19.11%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225022149/0001641172-25-022149-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming, Inc. updated that as of August 3, 2025, it holds 521,939 ETH, valued at approximately $303.7 million.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-27</td>
+                    <td class="number">438,190</td>
+                    <td class="number">+77,383</td>
+                    <td class="number">+21.45%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225021266/0001641172-25-021266-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of July 27, 2025, SharpLink Gaming holds 438,190 ETH valued at approximately $1.64 billion. The company has also issu...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-20</td>
+                    <td class="number">360,807</td>
+                    <td class="number">+80,101</td>
+                    <td class="number">+28.54%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225020521/0001641172-25-020521-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming, Inc. currently holds 360,807 ETH as of July 20, 2025, with an estimated value of approximately $1.17 b...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-13</td>
+                    <td class="number">280,706</td>
+                    <td class="number">+75,072</td>
+                    <td class="number">+36.51%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225019635/0001641172-25-019635-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming, Inc. has become the largest corporate holder of ETH with 280,706 ETH valued at approximately $798 mill...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-04</td>
+                    <td class="number">205,634</td>
+                    <td class="number">-523,170</td>
+                    <td class="number">-71.78%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225018094/0001641172-25-018094-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of July 4, 2025, SharpLink Gaming holds 205,634 ETH, having acquired an additional 7,689 ETH during the preceding wee...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">728,804</td>
+                    <td class="number">+530,637</td>
+                    <td class="number">+267.77%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225024278/0001641172-25-024278-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming, Inc. reports holding 728,804 ETH as of June 30, 2025, as part of its treasury strategy to adopt ETH as...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">198,167</td>
+                    <td class="number">+9,689</td>
+                    <td class="number">+5.14%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225017278/0001641172-25-017278-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming reported ETH holdings of 198,167 tokens as of June 30, 2025, acquired during a recent purchase and curr...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-20</td>
+                    <td class="number">188,478</td>
+                    <td class="number">+12,207</td>
+                    <td class="number">+6.93%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225016228/0001641172-25-016228-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming has increased its ETH holdings to 188,478 tokens as of June 20, 2025, with a recent acquisition of 12,2...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-13</td>
+                    <td class="number">176,271</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225014970/0001641172-25-014970-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink Gaming, Inc. has acquired 176,270.69 ETH as of June 13, 2025, valued at approximately $462.9 million, making i...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">198,646,255</td>
+                    <td class="number">+1,953,064</td>
+                    <td class="number">+0.99%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315226009214/0001493152-26-009214-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Sharplink, Inc. significantly shifted to an ETH-centered treasury strategy as of June 2025, holding approximately 640,02...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">196,693,191</td>
+                    <td class="number">+14,952,898</td>
+                    <td class="number">+8.23%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315225021970/0001493152-25-021970-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">SharpLink 10-Q: 196,693,191 shares outstanding as of September 30, 2025</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-22</td>
+                    <td class="number">181,740,293</td>
+                    <td class="number">+12,873,569</td>
+                    <td class="number">+7.62%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315225014949/0001493152-25-014949-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">SharpLink 8-K: 181,740,293 shares of common stock as of August 22, 2025</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">168,866,724</td>
+                    <td class="number">+106,741,388</td>
+                    <td class="number">+171.82%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225024107/0001641172-25-024107-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">SharpLink 10-Q: 168,866,724 shares outstanding as of June 30, 2025</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-18</td>
+                    <td class="number">62,125,336</td>
+                    <td class="number">+55,222,280</td>
+                    <td class="number">+799.97%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225020953/0001641172-25-020953-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing indicates that as of June 18, 2025, SharpLink Gaming, Inc. had 62,125,336 shares of common stock outstanding....</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-20</td>
+                    <td class="number">6,903,056</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000164117225005887/0001641172-25-005887-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing includes information regarding shares outstanding, with 6,903,056 shares of common stock issued and outstandi...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-14</td>
+                    <td class="number">6,903,056</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000143774925007734/0001437749-25-007734-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">SharpLink Gaming, Inc. reported no cryptocurrency treasury holdings but showed significant net loss reductions and a sol...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$28,539</td>
+                    <td>2025-12-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315226009214/0001493152-26-009214-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2025-12-31</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Armchair Enterprises</td>
+                    <td class="number">$500,000</td>
+                    <td>2026-03-09</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315226009214/0001493152-26-009214-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Investment in 10% equity stake in Armchair Enterprises.</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>204,409 LsETH</td>
+                    <td class="number">N/A</td>
+                    <td>2025-12-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1981535/000149315226009214/0001493152-26-009214-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2025-12-31</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Company Dashboard, Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

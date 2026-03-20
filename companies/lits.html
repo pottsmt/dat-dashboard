@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LITS - Lite Strategy | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>LITS - Lite Strategy</h1>
+        <div class="subtitle">Primary Asset: LTC | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    <div style="background:#f0fff4;border:1px solid #c6f6d5;border-radius:8px;padding:10px 15px;margin-bottom:20px;font-size:13px;color:#22543d;"><strong>Primary Source:</strong> Key metrics (treasury, market cap, mNAV) sourced from <a href="https://litestrategy.com/dashboard/" target="_blank" style="color:#2b6cb0;">litestrategy.com/dashboard</a></div>
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$1.17</div>
+        </div>
+        <div class="card">
+            <div class="label">LTC Price</div>
+            <div class="value">$55.40</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (929,548 LTC)</div>
+            <div class="value">$51.50M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$8.80M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$60.30M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">36,361,999</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: dashboard</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$1.66</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$42.54M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$33.79M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">N/A</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.71x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.65x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">833,748</td>
+                    <td class="number">-166,252</td>
+                    <td class="number">-16.63%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526053215/0001193125-26-053215-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of December 31, 2025, Lite Strategy, Inc. holds 833,748 LTC tokens valued at $63,970. The company has 36,785,999 shar...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-30</td>
+                    <td class="number">1,000,000</td>
+                    <td class="number">+70,452</td>
+                    <td class="number">+7.58%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525258474/0001193125-25-258474-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Lite Strategy, Inc. has approximately 1 million Litecoin in its treasury. The filing does not specify the exact USD valu...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">929,548</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525283111/0001193125-25-283111-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Lite Strategy, Inc. holds 929,548 LTC tokens valued at approximately $99,369 as part of its digital asset treasury strat...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-04</td>
+                    <td class="number">929,548</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025102419/0000950170-25-102419-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">MEI Pharma, Inc. announced the acquisition of 929,548 Litecoin tokens, valued at approximately $110.4 million as of Augu...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-02-12</td>
+                    <td class="number">36,785,397</td>
+                    <td class="number">-602</td>
+                    <td class="number">-0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526049005/0001193125-26-049005-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing primarily discusses corporate governance changes including the approval of the 2026 Omnibus Equity Compensati...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">36,785,999</td>
+                    <td class="number">+602</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526053215/0001193125-26-053215-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of December 31, 2025, Lite Strategy, Inc. holds 833,748 LTC tokens valued at $63,970. The company has 36,785,999 shar...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-08</td>
+                    <td class="number">36,785,397</td>
+                    <td class="number">+1,130,242</td>
+                    <td class="number">+3.17%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525283111/0001193125-25-283111-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Lite Strategy, Inc. holds 929,548 LTC tokens valued at approximately $99,369 as part of its digital asset treasury strat...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-23</td>
+                    <td class="number">35,655,155</td>
+                    <td class="number">+6,415,388</td>
+                    <td class="number">+21.94%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525220421/0001193125-25-220421-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Lite Strategy has implemented a Litecoin Treasury Strategy with the acquisition of Litecoin (LTC) coins and currently ho...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-22</td>
+                    <td class="number">29,239,767</td>
+                    <td class="number">+22,576,910</td>
+                    <td class="number">+338.85%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000114036125026773/0001140361-25-026773-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">MEI Pharma plans to launch a cryptocurrency treasury strategy focused on acquiring Litecoin (LTC) using proceeds from a ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-31</td>
+                    <td class="number">6,662,857</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025070276/0000950170-25-070276-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2025, MEI Pharma had 6,662,857 shares outstanding with a cash balance of $20.5 million. There is no trea...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-02-07</td>
+                    <td class="number">6,662,857</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025018809/0000950170-25-018809-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of December 31, 2024, MEI Pharma, Inc. reported cash and cash equivalents of approximately $23.7 million, with 6,662,...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-01-30</td>
+                    <td class="number">6,662,857</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025011790/0000950170-25-011790-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing reports that MEI Pharma, Inc. has 6,662,857 shares of common stock outstanding as of January 30, 2025.</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-09-30</td>
+                    <td class="number">6,662,857</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017024125328/0000950170-24-125328-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2024, MEI Pharma, Inc. holds no reported cryptocurrency or digital assets. The company has 6,662,857...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-09-13</td>
+                    <td class="number">6,662,857</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017024108185/0000950170-24-108185-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of June 30, 2024, MEI Pharma, Inc. holds no cryptocurrency assets, has 6,662,857 shares outstanding, a cash balance o...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-03-31</td>
+                    <td class="number">6,662,857</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017024056834/0000950170-24-056834-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2024, MEI Pharma, Inc. reported cash and cash equivalents of $2,368,000. The company has 6,662,857 share...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$8,800,000</td>
+                    <td>2025-12-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526053243/0001193125-26-053243-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2025-12-31</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Company Dashboard, Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

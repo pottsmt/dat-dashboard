@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ASST - Strive Inc | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>ASST - Strive Inc</h1>
+        <div class="subtitle">Primary Asset: BTC | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    <div style="background:#f0fff4;border:1px solid #c6f6d5;border-radius:8px;padding:10px 15px;margin-bottom:20px;font-size:13px;color:#22543d;"><strong>Primary Source:</strong> Key metrics (treasury, market cap, mNAV) sourced from <a href="https://treasury.strive.com/" target="_blank" style="color:#2b6cb0;">treasury.strive.com</a></div>
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$10.18</div>
+        </div>
+        <div class="card">
+            <div class="label">BTC Price</div>
+            <div class="value">$70,141.00</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (13,628 BTC)</div>
+            <div class="value">$1.26B</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$83.70M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$1.34B</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">69,362,475</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: dashboard</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$19.31</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$706.11M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$1.01B</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$10.00M</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.53x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">1.06x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-03-17</td>
+                    <td class="number">13,628</td>
+                    <td class="number">+317</td>
+                    <td class="number">+2.38%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026019636/0001628280-26-019636-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of March 17, 2026, Strive, Inc. holds 13,628 Bitcoin valued at an unspecified amount, has $83.7 million in cash, and ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-03-09</td>
+                    <td class="number">13,311</td>
+                    <td class="number">+179</td>
+                    <td class="number">+1.36%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026016664/0001628280-26-016664-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of March 9, 2026, Strive holds approximately 13,311 Bitcoin valued at an unspecified amount and has cash and cash equ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-11</td>
+                    <td class="number">13,132</td>
+                    <td class="number">-0</td>
+                    <td class="number">-0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026007897/0001628280-26-007897-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 11, 2026, Strive, Inc. holds 13,131.8 BTC valued at a cash balance of $127.2 million, with 53,168,237 sha...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-28</td>
+                    <td class="number">13,132</td>
+                    <td class="number">+334</td>
+                    <td class="number">+2.61%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000114036126002606/0001140361-26-002606-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. holds 13,131.82 Bitcoin as of January 28, 2026. The filing does not provide specific cash, shares outstandi...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-16</td>
+                    <td class="number">12,798</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000114036126002005/0001140361-26-002005-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. holds approximately 12,797.6 bitcoin as of January 16, 2026, as part of its treasury assets.</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-16</td>
+                    <td class="number">12,798</td>
+                    <td class="number">-0</td>
+                    <td class="number">-0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000114036126001875/0001140361-26-001875-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. holds approximately 12,797.6 bitcoin as of January 16, 2026. No cash or shares outstanding details were ava...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-16</td>
+                    <td class="number">12,798</td>
+                    <td class="number">+5,048</td>
+                    <td class="number">+65.14%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000095010326000616/0000950103-26-000616-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. reported holding approximately 12,797.9 bitcoins as of January 16, 2026, marking it as the 11th largest pub...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-12</td>
+                    <td class="number">7,750</td>
+                    <td class="number">+123</td>
+                    <td class="number">+1.61%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026001928/0001628280-26-001928-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. announced an increase in its Bitcoin holdings to 7,749.8 BTC following the purchase of 123 BTC. Additionall...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">7,627</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026019879/0001628280-26-019879-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Strive, Inc. reports holding approximately 7,627 BTC valued at approximately $668.5 million as of December 31, 2025, wit...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">7,627</td>
+                    <td class="number">+102</td>
+                    <td class="number">+1.35%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026000225/0001628280-26-000225-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of December 31, 2025, Strive, Inc. holds 7,626.8 bitcoin valued at approximately $862 million and has $67.6 million i...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-10</td>
+                    <td class="number">7,525</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000114036125041295/0001140361-25-041295-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. holds 7,525 Bitcoin valued approximately at $777 million as of November 10, 2025, and has issued 2,000,000 ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-10</td>
+                    <td class="number">7,525</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000114036125041298/0001140361-25-041298-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. reported holding approximately 7,525 bitcoin valued at a total acquisition cost of $853,218,300 as of Novem...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-07</td>
+                    <td class="number">7,525</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828025056878/0001628280-25-056878-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. holds approximately 7,525 bitcoins as of November 7, 2025. No other treasury holdings or financial figures ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-07</td>
+                    <td class="number">7,525</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000114036125045044/0001140361-25-045044-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. holds approximately 7,525 bitcoins as of November 7, 2025.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-07</td>
+                    <td class="number">7,525</td>
+                    <td class="number">+1,567</td>
+                    <td class="number">+26.30%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828025052342/0001628280-25-052342-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. disclosed treasury holdings of 7,525 Bitcoin valued at approximately $672.9 million as of November 7, 2025....</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-27</td>
+                    <td class="number">5,958</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000114036125040098/0001140361-25-040098-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. holds approximately 5,957.9 bitcoins as of October 27, 2025, with no other treasury or investment details p...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-27</td>
+                    <td class="number">5,958</td>
+                    <td class="number">+72</td>
+                    <td class="number">+1.22%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000095010325013686/0000950103-25-013686-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. reported that as of October 27, 2025, the company holds approximately 5,957.9 bitcoin, with a total purchas...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">5,886</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828025052343/0001628280-25-052343-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Strive, Inc. holds approximately 5,886 bitcoin valued at $672.9 million as of September 30, 2025, with a cash balance of...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">5,886</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000095010325012712/0000950103-25-012712-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of September 30, 2025, Strive, Inc. holds 5,886 bitcoins and has $108.6 million in cash and cash equivalents, with 10...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-22</td>
+                    <td class="number">5,886</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000095010325011928/0000950103-25-011928-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Strive, Inc. has acquired a total of 5,886 Bitcoin, including a recent purchase of 5,816 Bitcoin valued at $675 million ...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-03-17</td>
+                    <td class="number">59,286,628</td>
+                    <td class="number">-100,000</td>
+                    <td class="number">-0.17%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026019879/0001628280-26-019879-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Strive, Inc. reports holding approximately 7,627 BTC valued at approximately $668.5 million as of December 31, 2025, wit...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-03-17</td>
+                    <td class="number">59,386,628</td>
+                    <td class="number">+6,386,628</td>
+                    <td class="number">+12.05%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026019636/0001628280-26-019636-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of March 17, 2026, Strive, Inc. holds 13,628 Bitcoin valued at an unspecified amount, has $83.7 million in cash, and ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-11</td>
+                    <td class="number">53,000,000</td>
+                    <td class="number">+36,375,105</td>
+                    <td class="number">+218.80%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026007897/0001628280-26-007897-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 11, 2026, Strive, Inc. holds 13,131.8 BTC valued at a cash balance of $127.2 million, with 53,168,237 sha...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">16,624,895</td>
+                    <td class="number">-8,375,105</td>
+                    <td class="number">-33.50%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000121390025071724/0001213900-25-071724-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Asset Entities Inc. holds no cryptocurrency or digital assets. The total outstanding shares are 16,...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-06-21</td>
+                    <td class="number">25,000,000</td>
+                    <td class="number">+10,492,490</td>
+                    <td class="number">+72.32%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000121390024055738/0001213900-24-055738-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Asset Entities Inc. announced the acquisition of assets from TommyBoyTV for $200,000 in cash, with no disclosed cryptocu...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-03-31</td>
+                    <td class="number">14,507,510</td>
+                    <td class="number">+7,615,129</td>
+                    <td class="number">+110.49%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000121390024043619/0001213900-24-043619-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2024, Asset Entities Inc. reported holding no digital assets or cryptocurrencies, with cash and cash equ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-03-29</td>
+                    <td class="number">6,892,381</td>
+                    <td class="number">+1,516,657</td>
+                    <td class="number">+28.21%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000121390024029033/0001213900-24-029033-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of March 29, 2024, Asset Entities Inc. has 6,892,381 shares of Class B Common Stock outstanding and a cash balance of...</td>
+                </tr>
+                
+                <tr>
+                    <td>2023-09-29</td>
+                    <td class="number">5,375,724</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000121390024029402/0001213900-24-029402-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing reports that as of September 29, 2023, Asset Entities Inc. has 5,375,724 shares of Class B Common Stock outst...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$83,700,000</td>
+                    <td>2026-03-17</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026019879/0001628280-26-019879-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Per 10-K as of 2026-03-17</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>TommyBoyTV, LLC</td>
+                    <td class="number">$200,000</td>
+                    <td>2024-08-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000121390024069032/0001213900-24-069032-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Acquisition of assets from TommyBoyTV, LLC</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>One Step Closer: From Xero to #1: Becoming Linkin Park</td>
+                    <td class="number">$120,000</td>
+                    <td>2024-12-02</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000121390024104219/0001213900-24-104219-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Acquired a 50% ownership interest in adaptation rights of the literary work.</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>SATA Stock</td>
+                    <td class="number">$149,300,000</td>
+                    <td>2025-11-10</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000114036125041295/0001140361-25-041295-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Proceeds from the Offering amounting to approximately $149.3 million.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Semler Scientific, Inc.</td>
+                    <td class="number">N/A</td>
+                    <td>2026-01-13</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026001928/0001628280-26-001928-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Acquisition of Semler Scientific's 5,048.1 Bitcoin</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>Strategy Variable Rate Series A Perpetual Stretch Preferred Stock</td>
+                    <td class="number">$50,000,000</td>
+                    <td>2026-03-11</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026016664/0001628280-26-016664-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Purchased 500,000 shares.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Strategy Inc.</td>
+                    <td class="number">$50,000,000</td>
+                    <td>2026-03-19</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026019636/0001628280-26-019636-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Initial investment in Variable Rate Series A Perpetual Stretch Preferred Stock.</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>STRC Stock</td>
+                    <td class="number">$50,400,000</td>
+                    <td>2026-03-19</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1920406/000162828026019879/0001628280-26-019879-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Investment in the Variable Rate Series A Perpetual Stretch Preferred Stock of Strategy Inc.</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Company Dashboard, Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

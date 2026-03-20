@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TONX - TON Strategy Co | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>TONX - TON Strategy Co</h1>
+        <div class="subtitle">Primary Asset: TON | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$2.81</div>
+        </div>
+        <div class="card">
+            <div class="label">TON Price</div>
+            <div class="value">$1.24</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (217,865,237 TON)</div>
+            <div class="value">$276.15M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$53.04K</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$276.21M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">59,090,521</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: official</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$4.67</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$166.04M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$166.24M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$247.00K</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.60x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.60x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">217,865,237</td>
+                    <td class="number">+365,237</td>
+                    <td class="number">+0.17%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225021741/0001493152-25-021741-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, TON Strategy Company holds 217,865,237 TON tokens valued at $587,800 and 441,240 USDT tokens v...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">217,500,000</td>
+                    <td class="number">+500,000</td>
+                    <td class="number">+0.23%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225021744/0001493152-25-021744-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of September 30, 2025, TON Strategy Company holds 217.5 million TON tokens valued at approximately $588.2 million and...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-05</td>
+                    <td class="number">217,000,000</td>
+                    <td class="number">+68,590,164</td>
+                    <td class="number">+46.22%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225012756/0001493152-25-012756-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">TON Strategy Company holds approximately 217 million Toncoin valued at $780 million as of September 5, 2025.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-31</td>
+                    <td class="number">148,409,836</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225011558/0001493152-25-011558-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Verb Technology Company is entering a treasury strategy focused on acquiring Toncoin (TON) and expects to hold approxima...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">59,090,521</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225021741/0001493152-25-021741-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, TON Strategy Company holds 217,865,237 TON tokens valued at $587,800 and 441,240 USDT tokens v...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">59,090,521</td>
+                    <td class="number">-466,616</td>
+                    <td class="number">-0.78%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225021744/0001493152-25-021744-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of September 30, 2025, TON Strategy Company holds 217.5 million TON tokens valued at approximately $588.2 million and...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-26</td>
+                    <td class="number">59,557,137</td>
+                    <td class="number">-1,251,540</td>
+                    <td class="number">-2.06%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225015897/0001493152-25-015897-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of September 26, 2025, the Company has staked 82% of its $TON reserves. They report cash balances of $56.6 million an...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-11</td>
+                    <td class="number">60,808,677</td>
+                    <td class="number">-253,960</td>
+                    <td class="number">-0.42%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225013145/0001493152-25-013145-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing indicates that TON Strategy Company is focused on accumulating $TON as its primary treasury asset, with 60,80...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-07</td>
+                    <td class="number">61,062,637</td>
+                    <td class="number">+523,715</td>
+                    <td class="number">+0.87%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000164117225026818/0001641172-25-026818-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The company reported a treasury asset value per share of $11.90 as of September 7, 2025, but specific amounts of $TON he...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-08</td>
+                    <td class="number">60,538,922</td>
+                    <td class="number">+1,838,922</td>
+                    <td class="number">+3.13%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225011727/0001493152-25-011727-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Verb Technology Company, Inc. reported a total of 60,538,922 shares outstanding as of August 8, 2025, following their re...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-03</td>
+                    <td class="number">58,700,000</td>
+                    <td class="number">+56,802,045</td>
+                    <td class="number">+2992.80%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225011558/0001493152-25-011558-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Verb Technology Company is entering a treasury strategy focused on acquiring Toncoin (TON) and expects to hold approxima...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-01</td>
+                    <td class="number">1,897,955</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225011636/0001493152-25-011636-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Verb Technology Company, Inc. holds no disclosed amounts of Toncoin, with cash and cash equivalents...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$53,040</td>
+                    <td>2025-09-30</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225021741/0001493152-25-021741-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2025-09-30</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>U.S. Treasury Securities</td>
+                    <td class="number">$3,884</td>
+                    <td>2025-05-13</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000164117225009842/0001641172-25-009842-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Investments include short-term U.S. Treasury securities.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Corporate Bonds</td>
+                    <td class="number">$1,197</td>
+                    <td>2025-05-13</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000164117225009842/0001641172-25-009842-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Investments include short-term corporate bonds.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Lyvecom, Inc.</td>
+                    <td class="number">$3,000,000</td>
+                    <td>2025-04-17</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000164117225005161/0001641172-25-005161-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Acquisition of all outstanding capital stock</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>LyveCom</td>
+                    <td class="number">$3,000,000</td>
+                    <td>2025-08-06</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225011636/0001493152-25-011636-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Acquisition of Lyvecom included cash payments and issuance of restricted shares.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Toncoin</td>
+                    <td class="number">$272,700,000</td>
+                    <td>2025-10-29</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225020017/0001493152-25-020017-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Acquisition was contingent upon PIPE Financing</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>441,240 USDT</td>
+                    <td class="number">N/A</td>
+                    <td>2025-09-30</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1566610/000149315225021741/0001493152-25-021741-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2025-09-30</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

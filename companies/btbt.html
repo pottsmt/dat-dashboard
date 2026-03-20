@@ -1,0 +1,632 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BTBT - Bit Digital Inc | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>BTBT - Bit Digital Inc</h1>
+        <div class="subtitle">Primary Asset: ETH | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$1.59</div>
+        </div>
+        <div class="card">
+            <div class="label">ETH Price</div>
+            <div class="value">$2,133.16</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (155,277 ETH)</div>
+            <div class="value">$2.07B</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$179.10M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$2.24B</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">323,800,000</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: official</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$6.93</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$516.46M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$379.28M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$41.92M</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.23x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.25x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">155,277</td>
+                    <td class="number">+1,730</td>
+                    <td class="number">+1.13%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390026011802/0001213900-26-011802-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bit Digital holds 155,277.3 ETH valued at approximately $460.5 million as of December 31, 2025, and has 323.8 million sh...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-31</td>
+                    <td class="number">153,547</td>
+                    <td class="number">+51,523</td>
+                    <td class="number">+50.50%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025110283/0001213900-25-110283-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bit Digital, Inc. reported treasury holdings of 153,547 ETH valued at approximately $590.5 million as of October 31, 202...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">102,024</td>
+                    <td class="number">-19,228</td>
+                    <td class="number">-15.86%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025110383/0001213900-25-110383-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, Bit Digital holds 6.1 BTC valued at approximately $693,468 and 102,023.6 ETH valued at approxi...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-31</td>
+                    <td class="number">121,252</td>
+                    <td class="number">+176</td>
+                    <td class="number">+0.15%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025085266/0001213900-25-085266-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of August 31, 2025, Bit Digital holds 121,252 ETH valued at approximately $532.5 million. The company also holds a ma...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-11</td>
+                    <td class="number">121,076</td>
+                    <td class="number">+96,475</td>
+                    <td class="number">+392.16%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025077049/0001213900-25-077049-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bit Digital holds 121,076 ETH valued at approximately $511.5 million as of August 11, 2025, and has 321.4 million shares...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">24,601</td>
+                    <td class="number">+167</td>
+                    <td class="number">+0.68%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025076608/0001213900-25-076608-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Bit Digital holds 280.4 BTC valued at $30,051,600 and 24,601 ETH valued at $61,162,850. Cash and eq...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-31</td>
+                    <td class="number">24,434</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025057847/0001213900-25-057847-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of March 31, 2025, Bit Digital, Inc. holds 24,434.2 ETH valued at approximately $44.6 million and 417.6 BTC valued at...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-31</td>
+                    <td class="number">24,434</td>
+                    <td class="number">-3,255</td>
+                    <td class="number">-11.76%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025044155/0001213900-25-044155-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2025, Bit Digital held 417.6 BTC valued at $34,474,294 and 24,434.2 ETH valued at $44,556,466. The compa...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-01-31</td>
+                    <td class="number">27,690</td>
+                    <td class="number">+66</td>
+                    <td class="number">+0.24%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025012512/0001213900-25-012512-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of January 31, 2025, Bit Digital holds 768.7 BTC valued at approximately $161.8 million and 27,689.6 ETH. The company...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-12-31</td>
+                    <td class="number">27,623</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000101376225000307/0001013762-25-000307-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of December 31, 2024, Bit Digital holds 741.9 BTC and 27,623.2 ETH valued at approximately $69.3 million and $92.1 mi...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-12-31</td>
+                    <td class="number">27,623</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000101376225000323/0001013762-25-000323-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bit Digital, Inc. reported treasury holdings of 741.9 BTC valued at approximately $69.3 million and 27,623.2 ETH valued ...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">323,800,000</td>
+                    <td class="number">+1,675,205</td>
+                    <td class="number">+0.52%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390026011802/0001213900-26-011802-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bit Digital holds 155,277.3 ETH valued at approximately $460.5 million as of December 31, 2025, and has 323.8 million sh...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">322,124,795</td>
+                    <td class="number">+2,159,692</td>
+                    <td class="number">+0.67%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025110383/0001213900-25-110383-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of September 30, 2025, Bit Digital holds 6.1 BTC valued at approximately $693,468 and 102,023.6 ETH valued at approxi...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-25</td>
+                    <td class="number">319,965,103</td>
+                    <td class="number">-1,434,897</td>
+                    <td class="number">-0.45%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025091672/0001213900-25-091672-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing includes information on shares outstanding, which totals 319,965,103 ordinary shares as of September 25, 2025...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-31</td>
+                    <td class="number">321,400,000</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025085266/0001213900-25-085266-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of August 31, 2025, Bit Digital holds 121,252 ETH valued at approximately $532.5 million. The company also holds a ma...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-13</td>
+                    <td class="number">321,400,000</td>
+                    <td class="number">+37,347,709</td>
+                    <td class="number">+13.15%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025077049/0001213900-25-077049-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bit Digital holds 121,076 ETH valued at approximately $511.5 million as of August 11, 2025, and has 321.4 million shares...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">284,052,291</td>
+                    <td class="number">+101,026,119</td>
+                    <td class="number">+55.20%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025076608/0001213900-25-076608-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2025, Bit Digital holds 280.4 BTC valued at $30,051,600 and 24,601 ETH valued at $61,162,850. Cash and eq...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-05-20</td>
+                    <td class="number">183,026,172</td>
+                    <td class="number">+259,830</td>
+                    <td class="number">+0.14%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025047115/0001213900-25-047115-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing details the annual shareholder meeting votes and reports 183,026,172 ordinary shares outstanding as of May 20...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-31</td>
+                    <td class="number">182,766,342</td>
+                    <td class="number">+3,641,137</td>
+                    <td class="number">+2.03%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025044155/0001213900-25-044155-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2025, Bit Digital held 417.6 BTC valued at $34,474,294 and 24,434.2 ETH valued at $44,556,466. The compa...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-07</td>
+                    <td class="number">179,125,205</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000101376225000307/0001013762-25-000307-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of December 31, 2024, Bit Digital holds 741.9 BTC and 27,623.2 ETH valued at approximately $69.3 million and $92.1 mi...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>digital_asset</td>
+                    <td>280 BTC</td>
+                    <td class="number">$19,667,536</td>
+                    <td>2025-06-30</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025076608/0001213900-25-076608-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2025-06-30</td>
+                </tr>
+                
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$179,100,000</td>
+                    <td>2025-09-30</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025110283/0001213900-25-110283-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2025-09-30</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Enovum Data Centers</td>
+                    <td class="number">$46,000,000</td>
+                    <td>2025-02-12</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025012512/0001213900-25-012512-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Acquired Tier 3 Data Center platform, adding 4 MW capacity</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Investment in Nine Blocks Offshore Feeder Fund</td>
+                    <td class="number">$3,036,403</td>
+                    <td>2025-03-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000101376225000307/0001013762-25-000307-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Investment in a digital assets market neutral fund using a variety of trading strategies.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Investment in Auros Global Limited</td>
+                    <td class="number">$1,999,987</td>
+                    <td>2025-03-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000101376225000307/0001013762-25-000307-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Investment in an algorithmic trading and market making firm.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Investment in Ingonyama Ltd</td>
+                    <td class="number">$100,000</td>
+                    <td>2025-03-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000101376225000307/0001013762-25-000307-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Investment in a semiconductor company focusing on Zero Knowledge Proof hardware acceleration.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Investment in Cysic Inc.</td>
+                    <td class="number">$100,000</td>
+                    <td>2025-03-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000101376225000307/0001013762-25-000307-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Investment in ZK hardware acceleration company.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Investment in AI Innovation Fund I</td>
+                    <td class="number">$15,800,000</td>
+                    <td>2025-03-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000101376225000307/0001013762-25-000307-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Investment in private equity and fund of fund opportunities within the AI industry.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Investment in Innovation Fund I</td>
+                    <td class="number">$8,666,441</td>
+                    <td>2025-03-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000101376225000307/0001013762-25-000307-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Investment recorded at fair value.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Nine Blocks Offshore Feeder Fund</td>
+                    <td class="number">$3,036,667</td>
+                    <td>2025-11-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025110383/0001213900-25-110383-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Investment in a digital assets market neutral fund.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Auros Global Limited</td>
+                    <td class="number">$1,999,987</td>
+                    <td>2025-11-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025110383/0001213900-25-110383-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Investment in a crypto-native algorithmic trading firm.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Ingonyama Ltd.</td>
+                    <td class="number">$100,000</td>
+                    <td>2025-08-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025076608/0001213900-25-076608-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Investment in a semiconductor company.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Cysic Inc.</td>
+                    <td class="number">$100,000</td>
+                    <td>2025-08-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025076608/0001213900-25-076608-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Investment in ZK hardware acceleration company.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>AI Innovation Fund I</td>
+                    <td class="number">$17,576,600</td>
+                    <td>2025-11-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025110383/0001213900-25-110383-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">A fund focusing on private equity and fund of fund opportunities.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Innovation Fund I</td>
+                    <td class="number">$62,769,090</td>
+                    <td>2025-11-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025110383/0001213900-25-110383-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Investment in a fund with Net Asset Value measurement.</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>WhiteFiber</td>
+                    <td class="number">$441,900,000</td>
+                    <td>2025-09-08</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025085266/0001213900-25-085266-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Material stake representing approximately 71.5% ownership as of 9/4/25.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Ingonyama Ltd</td>
+                    <td class="number">$100,000</td>
+                    <td>2025-11-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025110383/0001213900-25-110383-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Investment in a semiconductor company.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Cysic Inc</td>
+                    <td class="number">$100,000</td>
+                    <td>2025-11-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025110383/0001213900-25-110383-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Investment in a ZK hardware acceleration company.</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>WhiteFiber Inc.</td>
+                    <td class="number">$734,800,000</td>
+                    <td>2025-11-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390025110283/0001213900-25-110283-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bit Digital holds approximately 70.7% of the outstanding shares of WhiteFiber, valued at approximately $734.8 million.</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>WhiteFiber (WYFI)</td>
+                    <td class="number">$427,300,000</td>
+                    <td>2026-02-04</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1710350/000121390026011802/0001213900-26-011802-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Stake held as of 12/31/25</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

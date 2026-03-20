@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BNC - CEA Industries Inc. | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>BNC - CEA Industries Inc.</h1>
+        <div class="subtitle">Primary Asset: BNB | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$3.10</div>
+        </div>
+        <div class="card">
+            <div class="label">BNB Price</div>
+            <div class="value">$640.25</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (515,544 BNB)</div>
+            <div class="value">$333.93M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$11.32M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$345.26M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">42,895,841</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: official</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$8.05</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$132.76M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$129.01M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$7.57M</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.51x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.41x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-03-16</td>
+                    <td class="number">500,000</td>
+                    <td class="number">-655,356</td>
+                    <td class="number">-56.72%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315226010327/0001493152-26-010327-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">CEA Industries Inc. reported a cryptocurrency treasury of over 500,000 BNB held as part of its digital asset strategy, w...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-31</td>
+                    <td class="number">1,155,356</td>
+                    <td class="number">+639,802</td>
+                    <td class="number">+124.10%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315226010296/0001493152-26-010296-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of January 31, 2026, CEA Industries Inc. holds significant digital assets, primarily BNB valued at approximately $402...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-04</td>
+                    <td class="number">515,554</td>
+                    <td class="number">+500</td>
+                    <td class="number">+0.10%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315225026259/0001493152-25-026259-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of December 4, 2025, CEA Industries Inc. holds 515,554 BNB tokens valued at approximately $464.6 million. There is no...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-18</td>
+                    <td class="number">515,054</td>
+                    <td class="number">-3,552,279</td>
+                    <td class="number">-87.34%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315225024180/0001493152-25-024180-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">CEA Industries, Inc. reported that it holds 515,054 BNB tokens valued at approximately $481 million as of November 18, 2...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-31</td>
+                    <td class="number">4,067,333</td>
+                    <td class="number">+3,567,333</td>
+                    <td class="number">+713.47%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315225027782/0001493152-25-027782-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of October 31, 2025, CEA Industries Inc. holds significant digital assets primarily in BNB, with total digital assets...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-31</td>
+                    <td class="number">500,000</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315225027818/0001493152-25-027818-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">CEA Industries Inc. reported that it holds over 500,000 BNB tokens as of October 31, 2025, marking a significant transfo...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-20</td>
+                    <td class="number">500,000</td>
+                    <td class="number">+20,000</td>
+                    <td class="number">+4.17%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315225018732/0001493152-25-018732-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">CEA Industries Inc. holds 500,000 BNB tokens valued at approximately $546.8 million as of October 20, 2025, along with $...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-06</td>
+                    <td class="number">480,000</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315225017242/0001493152-25-017242-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of October 6, 2025, CEA Industries holds 480,000 BNB tokens valued at approximately $585.5 million and has $77.5 mill...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-01-31</td>
+                    <td class="number">42,895,841</td>
+                    <td class="number">-1,167,097</td>
+                    <td class="number">-2.65%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315226010296/0001493152-26-010296-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of January 31, 2026, CEA Industries Inc. holds significant digital assets, primarily BNB valued at approximately $402...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-12</td>
+                    <td class="number">44,062,938</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315225029251/0001493152-25-029251-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">CEA Industries Inc. confirmed management of the world’s largest corporate treasury of BNB but did not provide specific q...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-12</td>
+                    <td class="number">44,062,938</td>
+                    <td class="number">+979,856</td>
+                    <td class="number">+2.27%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315225027782/0001493152-25-027782-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of October 31, 2025, CEA Industries Inc. holds significant digital assets primarily in BNB, with total digital assets...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-18</td>
+                    <td class="number">43,083,082</td>
+                    <td class="number">+42,280,736</td>
+                    <td class="number">+5269.64%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315225014503/0001493152-25-014503-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">CEA Industries Inc. reported a cash balance of approximately $3 million as of July 31, 2025, with no digital assets curr...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-31</td>
+                    <td class="number">802,346</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000164117225010831/0001641172-25-010831-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2025, CEA Industries reported 802,346 shares of common stock outstanding, cash and cash equivalents of $...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-27</td>
+                    <td class="number">802,346</td>
+                    <td class="number">+10,766</td>
+                    <td class="number">+1.36%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000164117225000913/0001641172-25-000913-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">CEA Industries Inc. has reported no current cryptocurrency holdings. As of March 27, 2025, the company has 802,346 basic...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-10-23</td>
+                    <td class="number">791,580</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315224050643/0001493152-24-050643-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">The filing reports that as of October 23, 2024, CEA Industries Inc. has 791,580 shares of common stock outstanding.</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-09-30</td>
+                    <td class="number">791,580</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315224045783/0001493152-24-045783-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">CEA Industries Inc. reported having outstanding shares of 791,580 as of September 30, 2024, post a reverse stock split. ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-06-30</td>
+                    <td class="number">791,580</td>
+                    <td class="number">-7,421,157</td>
+                    <td class="number">-90.36%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315224032140/0001493152-24-032140-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of June 30, 2024, CEA Industries holds no reported digital asset treasury. The company has 791,580 shares of common s...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-03-31</td>
+                    <td class="number">8,212,737</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315224019229/0001493152-24-019229-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">CEA Industries Inc. reported a cash balance of approximately $11.6 million as of March 31, 2024, with 8,212,737 shares o...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-03-29</td>
+                    <td class="number">8,212,737</td>
+                    <td class="number">+136,365</td>
+                    <td class="number">+1.69%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315224011974/0001493152-24-011974-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">The filing reveals that CEA Industries Inc. continues to face challenges in the cannabis market with a reported cash bal...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-03-28</td>
+                    <td class="number">8,076,372</td>
+                    <td class="number">-136,365</td>
+                    <td class="number">-1.66%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315224011737/0001493152-24-011737-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of December 31, 2023, CEA Industries Inc. reported cash and cash equivalents of $12.5 million and had 8,076,372 share...</td>
+                </tr>
+                
+                <tr>
+                    <td>2023-12-31</td>
+                    <td class="number">8,212,737</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315224011974/0001493152-24-011974-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">CEA Industries Inc. reported a cash balance of approximately $12.5 million as of December 31, 2023, with a total of 8,21...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$11,323,024</td>
+                    <td>2026-01-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315226010296/0001493152-26-010296-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2026-01-31</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Fat Panda Ltd.</td>
+                    <td class="number">$12,600,000</td>
+                    <td>2025-06-10</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000164117225014377/0001641172-25-014377-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Acquisition transaction totaling CAD $18.0 million; includes cash, stock, and seller notes.</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>55 BTC</td>
+                    <td class="number">$3,857,755</td>
+                    <td>2026-01-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315226010296/0001493152-26-010296-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2026-01-31</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>1,155,356 USDC</td>
+                    <td class="number">N/A</td>
+                    <td>2026-01-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315226010296/0001493152-26-010296-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2026-01-31</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>876,832 USDT</td>
+                    <td class="number">N/A</td>
+                    <td>2026-01-31</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1482541/000149315226010296/0001493152-26-010296-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Per 10-Q as of 2026-01-31</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

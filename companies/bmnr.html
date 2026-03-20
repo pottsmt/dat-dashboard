@@ -1,0 +1,834 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BMNR - Bitmine Immersion Technologies | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>BMNR - Bitmine Immersion Technologies</h1>
+        <div class="subtitle">Primary Asset: ETH | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$20.77</div>
+        </div>
+        <div class="card">
+            <div class="label">ETH Price</div>
+            <div class="value">$2,133.16</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (4,595,562 ETH)</div>
+            <div class="value">$10.10B</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$1.20B</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$11.30B</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">491,455,113</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: vwap_estimate</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$22.99</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$10.21B</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$9.01B</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">N/A</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.90x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">0.90x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-03-15</td>
+                    <td class="number">4,595,562</td>
+                    <td class="number">+60,999</td>
+                    <td class="number">+1.35%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226010193/0001493152-26-010193-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of March 15, 2026, Bitmine holds 4,595,562 ETH valued at approximately $10 billion and 196 BTC. The total cash holdin...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-03-08</td>
+                    <td class="number">4,534,563</td>
+                    <td class="number">+60,976</td>
+                    <td class="number">+1.36%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226009312/0001493152-26-009312-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of March 8, 2026, Bitmine has 4,534,563 ETH valued at approximately $8.93 billion, 195 BTC, $1.2 billion in cash, and...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-03-01</td>
+                    <td class="number">4,473,587</td>
+                    <td class="number">+50,928</td>
+                    <td class="number">+1.15%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226008462/0001493152-26-008462-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bitmine Immersion Technologies reported current holdings of approximately 4.47 million ETH valued at about $8.84 billion...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-22</td>
+                    <td class="number">4,422,659</td>
+                    <td class="number">+96,921</td>
+                    <td class="number">+2.24%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226007694/0001493152-26-007694-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bitmine Immersion Technologies reported holding 4,422,659 ETH valued at approximately $8.66 billion along with 193 BTC. ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-08</td>
+                    <td class="number">4,325,738</td>
+                    <td class="number">+40,613</td>
+                    <td class="number">+0.95%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226005707/0001493152-26-005707-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 8, 2026, Bitmine holds 4,325,738 ETH valued at approximately $9.25 billion and 193 BTC, with a cash balan...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-01</td>
+                    <td class="number">4,285,125</td>
+                    <td class="number">+41,787</td>
+                    <td class="number">+0.98%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226004658/0001493152-26-004658-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 1, 2026, Bitmine holds 4,285,125 ETH valued at approximately $99 million and 193 BTC. The company also ha...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-25</td>
+                    <td class="number">4,243,338</td>
+                    <td class="number">+75,570</td>
+                    <td class="number">+1.81%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226003536/0001493152-26-003536-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of January 25, 2026, Bitmine holds 4.24 million ETH valued at approximately $12 billion and 193 BTC. The company also...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-11</td>
+                    <td class="number">4,167,768</td>
+                    <td class="number">+24,266</td>
+                    <td class="number">+0.59%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226001237/0001493152-26-001237-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of January 11, 2026, Bitmine holds approximately 4.17 million ETH valued at about $13 billion, alongside 193 BTC and ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-04</td>
+                    <td class="number">4,143,502</td>
+                    <td class="number">+77,440</td>
+                    <td class="number">+1.90%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226000274/0001493152-26-000274-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of January 4, 2026, Bitmine holds 4,143,502 ETH valued at approximately $13.23 billion and 192 BTC. The company's tot...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-21</td>
+                    <td class="number">4,066,062</td>
+                    <td class="number">+98,852</td>
+                    <td class="number">+2.49%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225028674/0001493152-25-028674-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bitmine Immersion Technologies reported holdings of 4,066,062 ETH valued at approximately $12.1 billion, 193 BTC, and to...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-14</td>
+                    <td class="number">3,967,210</td>
+                    <td class="number">+102,259</td>
+                    <td class="number">+2.65%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225027660/0001493152-25-027660-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of December 14, 2025, Bitmine holds 3,967,210 ETH valued at approximately $12.28 billion and 193 BTC. The company's t...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-07</td>
+                    <td class="number">3,864,951</td>
+                    <td class="number">+127,811</td>
+                    <td class="number">+3.42%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225026540/0001493152-25-026540-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of December 7, 2025, Bitmine holds 3,864,951 ETH valued at approximately $12.1 billion.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-30</td>
+                    <td class="number">3,737,140</td>
+                    <td class="number">+107,439</td>
+                    <td class="number">+2.96%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226002084/0001493152-26-002084-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of November 30, 2025, Bitmine holds 193 BTC valued at $17,450 and 3,737,140 ETH valued at approximately $10,544,339. ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-23</td>
+                    <td class="number">3,629,701</td>
+                    <td class="number">+69,822</td>
+                    <td class="number">+1.96%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225024762/0001493152-25-024762-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of November 23, 2025, BitMine holds 3,629,701 ETH.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-16</td>
+                    <td class="number">3,559,879</td>
+                    <td class="number">+54,156</td>
+                    <td class="number">+1.54%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225023780/0001493152-25-023780-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of November 16, 2025, Bitmine holds approximately 3.56 million ETH valued at around $11.12 billion, along with 192 BT...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-10</td>
+                    <td class="number">3,505,723</td>
+                    <td class="number">+110,301</td>
+                    <td class="number">+3.25%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225021429/0001493152-25-021429-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bitmine has confirmed ETH holdings of 3,505,723 tokens valued at approximately $12.83 billion.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-02</td>
+                    <td class="number">3,395,422</td>
+                    <td class="number">+363,234</td>
+                    <td class="number">+11.98%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225020545/0001493152-25-020545-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of November 2, 2025, Bitmine holds 3,395,422 ETH valued at approximately $13.3 billion, 192 BTC, and has $389 million...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-12</td>
+                    <td class="number">3,032,188</td>
+                    <td class="number">+202,037</td>
+                    <td class="number">+7.14%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225017868/0001493152-25-017868-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of October 12, 2025, Bitmine holds over 3.03 million ETH valued at approximately $12.5 billion, 192 BTC, and $104 mil...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-05</td>
+                    <td class="number">2,830,151</td>
+                    <td class="number">+179,251</td>
+                    <td class="number">+6.76%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225017019/0001493152-25-017019-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bitmine holds 2,830,151 ETH valued at approximately $12.88 billion, 192 BTC.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-28</td>
+                    <td class="number">2,650,900</td>
+                    <td class="number">+234,846</td>
+                    <td class="number">+9.72%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225015879/0001493152-25-015879-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of September 28, 2025, Bitmine holds 2,650,900 ETH valued at approximately $10.9 billion, 192 BTC.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-21</td>
+                    <td class="number">2,416,054</td>
+                    <td class="number">+264,378</td>
+                    <td class="number">+12.29%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225014387/0001493152-25-014387-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of September 21, 2025, Bitmine holds 2,416,054 ETH valued at approximately $10.85 billion and 192 BTC. The company al...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-14</td>
+                    <td class="number">2,151,676</td>
+                    <td class="number">+82,233</td>
+                    <td class="number">+3.97%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225013376/0001493152-25-013376-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of September 14, 2025, Bitmine holds 2,151,676 ETH valued at approximately $10.8 billion, cash of $569 million, and a...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-07</td>
+                    <td class="number">2,069,443</td>
+                    <td class="number">+194,516</td>
+                    <td class="number">+10.37%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225012776/0001493152-25-012776-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bitmine Immersion Technologies holds approximately 2.07 million ETH, valued at over $8.9 billion, along with 192 BTC and...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-31</td>
+                    <td class="number">1,874,927</td>
+                    <td class="number">+82,237</td>
+                    <td class="number">+4.59%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225024679/0001493152-25-024679-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of August 31, 2025, Bitmine Immersion Technologies holds approximately 192 BTC valued at $20,923 and 1,874,926.8 ETH ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-27</td>
+                    <td class="number">1,792,690</td>
+                    <td class="number">+78,791</td>
+                    <td class="number">+4.60%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225012443/0001493152-25-012443-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of August 27, 2025, Bitmine holds 1,792,690 ETH valued at approximately $8.23 billion and 192 BTC. The company has un...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-24</td>
+                    <td class="number">1,713,899</td>
+                    <td class="number">+190,526</td>
+                    <td class="number">+12.51%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225012292/0001493152-25-012292-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bitmine Immersion Technologies holds 1,713,899 ETH, 192 BTC, and has cash reserves of $562 million as of August 24, 2025...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-17</td>
+                    <td class="number">1,523,373</td>
+                    <td class="number">+373,110</td>
+                    <td class="number">+32.44%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225012109/0001493152-25-012109-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bitmine Immersion Technologies reports current holdings of 1,523,373 ETH valued at approximately $6.6 billion and 192 BT...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-10</td>
+                    <td class="number">1,150,263</td>
+                    <td class="number">+317,126</td>
+                    <td class="number">+38.06%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225011799/0001493152-25-011799-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of August 10, 2025, Bitmine holds 1,150,263 ETH tokens, valued at approximately $4.96 billion, making it the largest ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-03</td>
+                    <td class="number">833,137</td>
+                    <td class="number">+208,137</td>
+                    <td class="number">+33.30%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225011555/0001493152-25-011555-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of August 3, 2025, Bitmine holds 833,137 ETH valued at $2.9 billion.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-28</td>
+                    <td class="number">625,000</td>
+                    <td class="number">+25,000</td>
+                    <td class="number">+4.17%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225011466/0001493152-25-011466-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of July 28, 2025, Bitmine holds 625,000 ETH valued at approximately $2.35 billion and 192 BTC.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-27</td>
+                    <td class="number">600,000</td>
+                    <td class="number">+33,224</td>
+                    <td class="number">+5.86%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225011438/0001493152-25-011438-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of July 27, 2025, Bitmine holds 600,000 ETH valued at $2.3 billion.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-24</td>
+                    <td class="number">566,776</td>
+                    <td class="number">+266,119</td>
+                    <td class="number">+88.51%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225011364/0001493152-25-011364-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bitmine reported ETH holdings of 566,776 tokens, valued at approximately $2 billion.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-17</td>
+                    <td class="number">300,657</td>
+                    <td class="number">+137,515</td>
+                    <td class="number">+84.29%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225011270/0001493152-25-011270-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of July 17, 2025, Bitmine holds approximately 300,657 ETH.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-14</td>
+                    <td class="number">163,142</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000164117225018905/0001641172-25-018905-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Bitmine announced it holds approximately $500 million in Ethereum, totaling 163,142 ETH.</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr class="estimated">
+                    <td>2026-03-15</td>
+                    <td class="number">491,455,113</td>
+                    <td class="number">+5,811,668</td>
+                    <td class="number">+1.20%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $20.67 | Treasury delta: $120,149,352 (60,999 units @ $1,969.6938 (historical avg)) | +5,811,668 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2026-03-08</td>
+                    <td class="number">485,643,445</td>
+                    <td class="number">+5,948,090</td>
+                    <td class="number">+1.24%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $20.17 | Treasury delta: $119,962,061 (60,976 units @ $1,967.3652 (historical avg)) | +5,948,090 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2026-03-01</td>
+                    <td class="number">479,695,354</td>
+                    <td class="number">+4,971,440</td>
+                    <td class="number">+1.05%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $20.17 | Treasury delta: $100,295,081 (50,928 units @ $1,969.3505 (historical avg)) | +4,971,440 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2026-02-22</td>
+                    <td class="number">474,723,915</td>
+                    <td class="number">+9,720,217</td>
+                    <td class="number">+2.09%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $20.26 | Treasury delta: $196,977,621 (96,921 units @ $2,032.3523 (historical avg)) | +9,720,217 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2026-02-08</td>
+                    <td class="number">465,003,698</td>
+                    <td class="number">+4,516,256</td>
+                    <td class="number">+0.98%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $20.39 | Treasury delta: $92,089,356 (40,613 units @ $2,267.4847 (historical avg)) | +4,516,256 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2026-02-01</td>
+                    <td class="number">460,487,442</td>
+                    <td class="number">+4,108,802</td>
+                    <td class="number">+0.90%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $27.42 | Treasury delta: $112,681,287 (41,787 units @ $2,696.5632 (historical avg)) | +4,108,802 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2026-01-25</td>
+                    <td class="number">456,378,640</td>
+                    <td class="number">+7,325,223</td>
+                    <td class="number">+1.63%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $30.43 | Treasury delta: $222,870,846 (75,570 units @ $2,949.1974 (historical avg)) | +7,325,223 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2026-01-11</td>
+                    <td class="number">449,053,417</td>
+                    <td class="number">+2,398,633</td>
+                    <td class="number">+0.54%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $31.62 | Treasury delta: $75,856,513 (24,266 units @ $3,126.0411 (historical avg)) | +2,398,633 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2026-01-04</td>
+                    <td class="number">446,654,784</td>
+                    <td class="number">+8,038,995</td>
+                    <td class="number">+1.83%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $29.40 | Treasury delta: $236,316,034 (77,440 units @ $3,051.6017 (historical avg)) | +8,038,995 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2025-12-21</td>
+                    <td class="number">438,615,789</td>
+                    <td class="number">+9,941,134</td>
+                    <td class="number">+2.32%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $30.29 | Treasury delta: $301,122,354 (98,852 units @ $3,046.1938 (historical avg)) | +9,941,134 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2025-12-14</td>
+                    <td class="number">428,674,656</td>
+                    <td class="number">+8,311,056</td>
+                    <td class="number">+1.98%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $37.86 | Treasury delta: $314,680,803 (102,259 units @ $3,077.2920 (historical avg)) | +8,311,056 shares est.</td>
+                </tr>
+                
+                <tr class="estimated">
+                    <td>2025-12-07</td>
+                    <td class="number">420,363,599</td>
+                    <td class="number">+11,784,776</td>
+                    <td class="number">+2.88%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">VWAP: $32.70 | Treasury delta: $385,387,971 (127,811 units @ $3,015.2958 (historical avg)) | +11,784,776 shares est.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-30</td>
+                    <td class="number">408,578,823</td>
+                    <td class="number">+173,866,499</td>
+                    <td class="number">+74.08%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226002084/0001493152-26-002084-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of November 30, 2025, Bitmine holds 193 BTC valued at $17,450 and 3,737,140 ETH valued at approximately $10,544,339. ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-31</td>
+                    <td class="number">234,712,324</td>
+                    <td class="number">+112,972,791</td>
+                    <td class="number">+92.80%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225024679/0001493152-25-024679-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">As of August 31, 2025, Bitmine Immersion Technologies holds approximately 192 BTC valued at $20,923 and 1,874,926.8 ETH ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-28</td>
+                    <td class="number">121,739,533</td>
+                    <td class="number">+85,429,941</td>
+                    <td class="number">+235.28%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315225011466/0001493152-25-011466-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of July 28, 2025, Bitmine Immersion Technologies holds 625,000 ETH valued at approximately $2.35 billion and 192 BTC ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-08</td>
+                    <td class="number">36,309,592</td>
+                    <td class="number">+32,006,226</td>
+                    <td class="number">+743.75%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000164117225018421/0001641172-25-018421-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">BitMine Immersion Technologies, Inc. entered into a consulting agreement to strengthen its treasury strategy centered on...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-05-31</td>
+                    <td class="number">4,303,366</td>
+                    <td class="number">-35,364,241</td>
+                    <td class="number">-89.15%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000168316825004889/0001683168-25-004889-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of May 31, 2025 (post 1:10 reverse stock split). Company holds approximately 1.67 BTC.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-04-11</td>
+                    <td class="number">39,667,607</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000168316825002541/0001683168-25-002541-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Bitmine Immersion Technologies, Inc. has reported holding 2.94 BTC valued at $247,923 as of February 28, 2025, with tota...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-01-10</td>
+                    <td class="number">39,667,607</td>
+                    <td class="number">-300,100</td>
+                    <td class="number">-0.75%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000168316825000223/0001683168-25-000223-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of November 30, 2024, Bitmine holds 1.54 BTC valued at $149,779, has 39,667,607 shares of common stock outstanding, c...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-12-05</td>
+                    <td class="number">39,967,707</td>
+                    <td class="number">-9,944,900</td>
+                    <td class="number">-19.92%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000168316824008555/0001683168-24-008555-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Bitmine Immersion Technologies reported holding a total of approximately 0.25731 Bitcoin valued at $14,966 as of August ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-05-31</td>
+                    <td class="number">49,912,607</td>
+                    <td class="number">+90,909</td>
+                    <td class="number">+0.18%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000168316824004815/0001683168-24-004815-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of May 31, 2024, Bitmine Immersion Technologies holds 2.5 BTC valued at $169,632 and has total cash and equivalents o...</td>
+                </tr>
+                
+                <tr>
+                    <td>2024-02-29</td>
+                    <td class="number">49,821,698</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000168316824002367/0001683168-24-002367-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Bitmine Immersion Technologies holds approximately 0.2 BTC valued at $11,733 as of February 29, 2024, with total shares ...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>digital_asset</td>
+                    <td>196 BTC</td>
+                    <td class="number">$13,747,636</td>
+                    <td>2026-03-15</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226010193/0001493152-26-010193-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2026-03-15</td>
+                </tr>
+                
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$1,200,000,000</td>
+                    <td>2026-03-15</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226010193/0001493152-26-010193-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2026-03-15</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>Beast Industries</td>
+                    <td class="number">$200,000,000</td>
+                    <td>2026-03-16</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226010193/0001493152-26-010193-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Stake in Beast Industries</td>
+                </tr>
+                
+                <tr>
+                    <td>public_equity</td>
+                    <td>Eightco Holdings</td>
+                    <td class="number">$83,000,000</td>
+                    <td>2026-03-16</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226010193/0001493152-26-010193-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Stake increased to support ORBS purchase of OpenAI equity</td>
+                </tr>
+                
+                <tr>
+                    <td>digital_asset</td>
+                    <td>670,000,000 cash</td>
+                    <td class="number">N/A</td>
+                    <td>2026-02-16</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1829311/000149315226006953/0001493152-26-006953-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2026-02-16</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>

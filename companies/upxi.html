@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>UPXI - Upexi Inc | DAT Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card .label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        th {
+            text-align: center;
+        }
+        .number {
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .notes {
+            font-size: 12px;
+            color: #4a5568;
+            max-width: 300px;
+        }
+        tr.estimated {
+            background-color: #f0f4ff;
+            font-style: italic;
+        }
+        tr.estimated td {
+            color: #5a6577;
+        }
+        .method-estimated {
+            display: inline-block;
+            background: #9f7aea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: normal;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+        <h1>UPXI - Upexi Inc</h1>
+        <div class="subtitle">Primary Asset: SOL | Generated: 2026-03-20 09:30:10 ET</div>
+    </div>
+
+    
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="label">Stock Price</div>
+            <div class="value">$1.04</div>
+        </div>
+        <div class="card">
+            <div class="label">SOL Price</div>
+            <div class="value">$88.97</div>
+        </div>
+        <div class="card">
+            <div class="label">Treasury (2,000,000 SOL)</div>
+            <div class="value">$178.69M</div>
+        </div>
+        <div class="card">
+            <div class="label">Cash</div>
+            <div class="value">$7.40M</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV</div>
+            <div class="value">$186.09M</div>
+        </div>
+        <div class="card">
+            <div class="label">Shares Outstanding</div>
+            <div class="value">62,796,526</div>
+            <div style="font-size:11px;color:#718096;margin-top:3px;">Source: vwap_estimate</div>
+        </div>
+        <div class="card">
+            <div class="label">NAV per Share</div>
+            <div class="value">$2.96</div>
+        </div>
+        <div class="card">
+            <div class="label">Market Cap</div>
+            <div class="value">$65.20M</div>
+        </div>
+        <div class="card">
+            <div class="label">Enterprise Value</div>
+            <div class="value">$271.27M</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Debt</div>
+            <div class="value">$213.48M</div>
+        </div>
+        <div class="card">
+            <div class="label">Mcap/NAV</div>
+            <div class="value">0.35x</div>
+        </div>
+        <div class="card">
+            <div class="label">mNAV</div>
+            <div class="value">1.50x</div>
+        </div>
+    </div>
+
+    <h2>Treasury History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Units</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>2026-03-05</td>
+                    <td class="number">2,000,000</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793226001195/0001477932-26-001195-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. currently holds over two million SOL as part of its digital asset treasury, though no USD value or specific ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-09</td>
+                    <td class="number">2,000,000</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793226000712/0001477932-26-000712-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. holds over two million SOL tokens, with a cash balance of approximately $7.4 million as of February 9, 2026....</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-09</td>
+                    <td class="number">2,000,000</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793226000740/0001477932-26-000740-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 9, 2026, Upexi, Inc. holds over 2 million SOL tokens. The company also has 69,760,581 shares of common st...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-30</td>
+                    <td class="number">2,000,000</td>
+                    <td class="number">-400,000</td>
+                    <td class="number">-16.67%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793226000558/0001477932-26-000558-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. announced that it currently holds over two million SOL tokens as part of its digital asset treasury.</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-14</td>
+                    <td class="number">2,400,000</td>
+                    <td class="number">+225,417</td>
+                    <td class="number">+10.37%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793226000207/0001477932-26-000207-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. reported that they expect to have over 2.4 million SOL in their treasury as of January 14, 2026, following a...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-01-05</td>
+                    <td class="number">2,174,583</td>
+                    <td class="number">+1,379</td>
+                    <td class="number">+0.06%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793226000137/0001477932-26-000137-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. reported its Solana holdings of 2,174,583 SOL as of January 5, 2026, reflecting a strategic shift towards en...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">2,173,204</td>
+                    <td class="number">+173,204</td>
+                    <td class="number">+8.66%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793226000736/0001477932-26-000736-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Upexi, Inc. reported significant digital asset holdings in SOL, with 2,173,204 tokens valued at approximately $255.7 mil...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-31</td>
+                    <td class="number">2,000,000</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225009281/0001477932-25-009281-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. currently holds over two million SOL tokens as part of its digital asset treasury strategy.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-02</td>
+                    <td class="number">2,000,000</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225008815/0001477932-25-008815-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. reported holding over 2 million SOL as of December 2, 2025, along with issuing 3.28 million shares of common...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-12-01</td>
+                    <td class="number">2,000,000</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225008713/0001477932-25-008713-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. announced a securities purchase agreement for the sale of shares and warrants, expecting to receive $10 mill...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-14</td>
+                    <td class="number">2,000,000</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225008305/0001477932-25-008305-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. announced it currently holds over two million SOL tokens as part of its digital asset treasury strategy.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-07</td>
+                    <td class="number">2,000,000</td>
+                    <td class="number">-106,989</td>
+                    <td class="number">-5.08%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225007982/0001477932-25-007982-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. currently holds over two million SOL in its digital asset treasury.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-31</td>
+                    <td class="number">2,106,989</td>
+                    <td class="number">+106,989</td>
+                    <td class="number">+5.35%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225007931/0001477932-25-007931-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. holds 2,106,989 SOL valued at approximately $397 million as of October 31, 2025, representing a significant ...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-10-24</td>
+                    <td class="number">2,000,000</td>
+                    <td class="number">-66,827</td>
+                    <td class="number">-3.23%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225007749/0001477932-25-007749-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. currently holds over two million SOL tokens as part of its cryptocurrency treasury. The filing does not prov...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">2,066,827</td>
+                    <td class="number">+66,827</td>
+                    <td class="number">+3.34%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225008025/0001477932-25-008025-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Upexi holds 2,066,827 SOL tokens valued at approximately $400.83 million as of September 30, 2025. The company has 59,91...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-30</td>
+                    <td class="number">2,000,000</td>
+                    <td class="number">-18,419</td>
+                    <td class="number">-0.91%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225008089/0001477932-25-008089-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. reported holding 2,000,000 SOL tokens valued at $212,832,396 as of September 30, 2025, with 59,918,609 share...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-23</td>
+                    <td class="number">2,018,419</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225007090/0001477932-25-007090-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. reported treasury holdings of 2,018,419 SOL valued at $433 million as of September 23, 2025, with 58,893,261...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-10</td>
+                    <td class="number">2,018,419</td>
+                    <td class="number">+17,901</td>
+                    <td class="number">+0.89%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225006712/0001477932-25-006712-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of September 10, 2025, Upexi, Inc. holds 2,018,419 SOL valued at $447 million, with an unrealized gain of $142 millio...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-04</td>
+                    <td class="number">2,000,518</td>
+                    <td class="number">+100,518</td>
+                    <td class="number">+5.29%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225005620/0001477932-25-005620-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of August 4, 2025, Upexi holds 2,000,518 SOL valued at $334 million, with 58.9 million shares outstanding.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-23</td>
+                    <td class="number">1,900,000</td>
+                    <td class="number">+81,191</td>
+                    <td class="number">+4.46%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225005253/0001477932-25-005253-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. announced the acquisition of 83,000 SOL, increasing their treasury to 1.9 million SOL valued at $381 million...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-21</td>
+                    <td class="number">1,818,809</td>
+                    <td class="number">+168,809</td>
+                    <td class="number">+10.23%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225005178/0001477932-25-005178-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. currently holds 1,818,809 SOL valued at $331 million as of July 21, 2025. The company has 53.8 million share...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-16</td>
+                    <td class="number">1,650,000</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225005150/0001477932-25-005150-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. disclosed that they hold approximately 1.65 million SOL as a result of a recent convertible note offering.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-16</td>
+                    <td class="number">1,650,000</td>
+                    <td class="number">+905,974</td>
+                    <td class="number">+121.77%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225005026/0001477932-25-005026-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. announced a concurrent private placement expected to result in acquiring approximately 1.65 million SOL, mor...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">744,026</td>
+                    <td class="number">+8,334</td>
+                    <td class="number">+1.13%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225006996/0001477932-25-006996-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Upexi, Inc. has diversified into the cryptocurrency market with a treasury dedicated to Solana tokens, holding approxima...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">735,692</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225004960/0001477932-25-004960-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of June 30, 2025, Upexi, Inc. holds 735,692 SOL tokens valued at approximately $113.8 million, with 38.2 million shar...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-24</td>
+                    <td class="number">735,692</td>
+                    <td class="number">+56,015</td>
+                    <td class="number">+8.24%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225004820/0001477932-25-004820-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. reports current holdings of 735,692 SOL as of June 24, 2025. No additional information on cash, other invest...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-05-28</td>
+                    <td class="number">679,677</td>
+                    <td class="number">+82,675</td>
+                    <td class="number">+13.85%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225004219/0001477932-25-004219-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. currently holds 679,677 SOL valued at $121.2 million as of May 28, 2025. The recent purchase of 77,879 locke...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-05-16</td>
+                    <td class="number">597,002</td>
+                    <td class="number">+288</td>
+                    <td class="number">+0.05%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225003918/0001477932-25-003918-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. holds 597,002 SOL valued at approximately $102.4 million as of May 16, 2025. Additionally, there are 37,253,...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-05-12</td>
+                    <td class="number">596,714</td>
+                    <td class="number">+395,214</td>
+                    <td class="number">+196.14%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225003582/0001477932-25-003582-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. holds 596,714 SOL tokens valued at $102 million as of May 12, 2025, following a recent acquisition of discou...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-05-06</td>
+                    <td class="number">201,500</td>
+                    <td class="number">+155,767</td>
+                    <td class="number">+340.60%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225003387/0001477932-25-003387-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. has significantly increased its treasury to hold 201,500 Solana tokens valued at $30 million as of May 6, 20...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-04-29</td>
+                    <td class="number">45,733</td>
+                    <td class="number">+45,374</td>
+                    <td class="number">+12639.00%</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225003106/0001477932-25-003106-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. disclosed it has accumulated 45,733 Solana tokens valued at approximately $6.7 million as part of its digita...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-03-31</td>
+                    <td class="number">359</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225003866/0001477932-25-003866-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2025, Upexi, Inc. holds 359 Solana tokens valued at approximately $44,732. The company has 37,253,373 sh...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    <h2>Shares Outstanding History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Shares</th>
+                <th>Change</th>
+                <th>Change %</th>
+                <th>Method</th>
+                <th>Filing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr class="estimated">
+                    <td>2026-03-05</td>
+                    <td class="number">62,796,526</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td><span class="method-estimated">estimated</span></td>
+                    <td><span style="color:#9f7aea;font-style:normal;">ATM dilution</span></td>
+                    <td class="notes">No treasury increase (2026-02-09 to 2026-03-05)</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-09</td>
+                    <td class="number">62,796,526</td>
+                    <td class="number">-6,964,055</td>
+                    <td class="number">-9.98%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793226000736/0001477932-26-000736-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Upexi, Inc. reported significant digital asset holdings in SOL, with 2,173,204 tokens valued at approximately $255.7 mil...</td>
+                </tr>
+                
+                <tr>
+                    <td>2026-02-09</td>
+                    <td class="number">69,760,581</td>
+                    <td class="number">+9,841,972</td>
+                    <td class="number">+16.43%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793226000740/0001477932-26-000740-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of February 9, 2026, Upexi, Inc. holds over 2 million SOL tokens. The company also has 69,760,581 shares of common st...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-12</td>
+                    <td class="number">59,918,609</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225008025/0001477932-25-008025-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Upexi holds 2,066,827 SOL tokens valued at approximately $400.83 million as of September 30, 2025. The company has 59,91...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-11-12</td>
+                    <td class="number">59,918,609</td>
+                    <td class="number">+1,629,853</td>
+                    <td class="number">+2.80%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225008089/0001477932-25-008089-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. reported holding 2,000,000 SOL tokens valued at $212,832,396 as of September 30, 2025, with 59,918,609 share...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-23</td>
+                    <td class="number">58,288,756</td>
+                    <td class="number">-604,505</td>
+                    <td class="number">-1.03%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225006996/0001477932-25-006996-index.htm" target="_blank"><span style="display:inline-block;background:#2b6cb0;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-K</span></a></td>
+                    <td class="notes">Upexi, Inc. has diversified into the cryptocurrency market with a treasury dedicated to Solana tokens, holding approxima...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-09-10</td>
+                    <td class="number">58,893,261</td>
+                    <td class="number">-6,739</td>
+                    <td class="number">-0.01%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225007090/0001477932-25-007090-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. reported treasury holdings of 2,018,419 SOL valued at $433 million as of September 23, 2025, with 58,893,261...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-08-04</td>
+                    <td class="number">58,900,000</td>
+                    <td class="number">+5,100,000</td>
+                    <td class="number">+9.48%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225005620/0001477932-25-005620-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of August 4, 2025, Upexi holds 2,000,518 SOL valued at $334 million, with 58.9 million shares outstanding.</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-07-18</td>
+                    <td class="number">53,800,000</td>
+                    <td class="number">+15,600,000</td>
+                    <td class="number">+40.84%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225005178/0001477932-25-005178-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. currently holds 1,818,809 SOL valued at $331 million as of July 21, 2025. The company has 53.8 million share...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-06-30</td>
+                    <td class="number">38,200,000</td>
+                    <td class="number">+946,627</td>
+                    <td class="number">+2.54%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225004960/0001477932-25-004960-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">As of June 30, 2025, Upexi, Inc. holds 735,692 SOL tokens valued at approximately $113.8 million, with 38.2 million shar...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-05-14</td>
+                    <td class="number">37,253,373</td>
+                    <td class="number">+0</td>
+                    <td class="number">+0.00%</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225003866/0001477932-25-003866-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">As of March 31, 2025, Upexi, Inc. holds 359 Solana tokens valued at approximately $44,732. The company has 37,253,373 sh...</td>
+                </tr>
+                
+                <tr>
+                    <td>2025-05-14</td>
+                    <td class="number">37,253,373</td>
+                    <td class="number">--</td>
+                    <td class="number">--</td>
+                    <td>official</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225003918/0001477932-25-003918-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi, Inc. holds 597,002 SOL valued at approximately $102.4 million as of May 16, 2025. Additionally, there are 37,253,...</td>
+                </tr>
+                
+        </tbody>
+    </table>
+
+    
+            <h2>Other Holdings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Filing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>cash</td>
+                    <td>Cash and cash equivalents</td>
+                    <td class="number">$7,400,000</td>
+                    <td>2026-02-09</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793226000712/0001477932-26-000712-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Per 8-K as of 2026-02-09</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Discounted Locked SOL</td>
+                    <td class="number">$84,300,000</td>
+                    <td>2025-05-13</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225003582/0001477932-25-003582-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Upexi purchased 326,347 of Discounted Locked SOL for an average price.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Locked SOL tokens</td>
+                    <td class="number">$11,800,000</td>
+                    <td>2025-05-28</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225004219/0001477932-25-004219-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Purchased 77,879 locked SOL at $151.50 each</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Convertible Notes</td>
+                    <td class="number">$150,000,000</td>
+                    <td>2025-07-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225005026/0001477932-25-005026-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Invested through a Note Offering collateralized by Solana</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>Alpha Exchange</td>
+                    <td class="number">$750,000</td>
+                    <td>2025-08-27</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225006316/0001477932-25-006316-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Investment in exchange for a royalty of 14.9% of future gross revenue, with options to invest more.</td>
+                </tr>
+                
+                <tr>
+                    <td>private_equity</td>
+                    <td>Cybersyn Holdings, LLC</td>
+                    <td class="number">$750,000</td>
+                    <td>2025-11-12</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793225008025/0001477932-25-008025-index.htm" target="_blank"><span style="display:inline-block;background:#2f855a;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10-Q</span></a></td>
+                    <td class="notes">Initial investment for a royalty on future gross revenue.</td>
+                </tr>
+                
+                <tr>
+                    <td>other</td>
+                    <td>secured convertible note</td>
+                    <td class="number">$36,000,000</td>
+                    <td>2026-01-14</td>
+                    <td><a href="https://www.sec.gov/Archives/edgar/data/1775194/000147793226000207/0001477932-26-000207-index.htm" target="_blank"><span style="display:inline-block;background:#c05621;color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">8-K</span></a></td>
+                    <td class="notes">Note issued in exchange for the transfer of locked SOL.</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="footer">
+        Generated by DAT Dashboard | Data sources: Bloomberg, CoinGecko, SEC EDGAR
+    </div>
+</body>
+</html>
