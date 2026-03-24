@@ -9,7 +9,7 @@ data/filings/
 data/exports/
 data/reports/
 data/analysis/
-data/history/
+data/history/*.bak
 
 # IDE
 .idea/
