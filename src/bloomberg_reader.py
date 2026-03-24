@@ -15,13 +15,14 @@ class StockData:
     ticker: str
     price: Optional[float] = None
     volume: Optional[float] = None
-    avg_volume_30d: Optional[float] = None
+    avg_volume_5d: Optional[float] = None  # 5-day average volume
     shares_outstanding: Optional[float] = None  # in millions from Bloomberg
     market_cap: Optional[float] = None  # in millions from Bloomberg
     total_debt: Optional[float] = None
     cash: Optional[float] = None
     enterprise_value: Optional[float] = None
-    vwap: Optional[float] = None
+    vwap_start_date: Optional[str] = None  # Date string for VWAP period start
+    vwap: Optional[float] = None  # VWAP from start date to yesterday
     price_3d_ago: Optional[float] = None
     price_7d_ago: Optional[float] = None
     price_30d_ago: Optional[float] = None
@@ -78,8 +79,9 @@ class BloombergReader:
         ("price_30d_ago", "price_30d_ago"),
         ("price_7d_ago", "price_7d_ago"),
         ("price_3d_ago", "price_3d_ago"),
-        ("avg_vol_30d", "avg_volume_30d"),
+        ("avg_vol_5d", "avg_volume_5d"),
         ("enterprise_value", "enterprise_value"),
+        ("vwap_start_date", "vwap_start_date"),
         ("shares_out", "shares_outstanding"),
         ("market_cap", "market_cap"),
         ("total_debt", "total_debt"),
@@ -162,8 +164,14 @@ class BloombergReader:
                 for csv_col, attr in col_mapping.items():
                     if attr == "ticker":
                         continue
-                    value = self._parse_float(row.get(csv_col, ""))
-                    setattr(data, attr, value)
+                    raw_value = row.get(csv_col, "")
+                    # Handle date columns as strings
+                    if attr == "vwap_start_date":
+                        if raw_value and raw_value.strip():
+                            setattr(data, attr, raw_value.strip())
+                    else:
+                        value = self._parse_float(raw_value)
+                        setattr(data, attr, value)
 
                 results.append(data)
 

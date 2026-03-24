@@ -15,9 +15,10 @@ class HoldingsUpdate:
     date: str  # ISO format date
     treasury_units: float
     treasury_asset: str
-    source: str  # "8-K", "10-Q", "10-K", "press_release", "manual"
+    source: str  # SEC filings only: "8-K", "10-Q", "10-K"
     accession_number: Optional[str] = None
     notes: Optional[str] = None
+    treasury_value_usd: Optional[float] = None  # Reported USD value of treasury at filing date
 
 
 @dataclass
@@ -29,6 +30,9 @@ class SharesUpdate:
     method: Optional[str] = None  # "official", "vwap_estimate"
     accession_number: Optional[str] = None
     notes: Optional[str] = None
+    # For ATM dilution estimation
+    treasury_units_at_date: Optional[float] = None  # Treasury units at time of filing
+    treasury_value_usd_at_date: Optional[float] = None  # Or treasury $ if reported
 
 
 @dataclass
@@ -39,6 +43,7 @@ class CompanyHoldings:
     primary_asset: str
     holdings_history: List[HoldingsUpdate] = field(default_factory=list)
     shares_history: List[SharesUpdate] = field(default_factory=list)
+    other_holdings: List[Dict] = field(default_factory=list)  # Private equity, public equity stakes
     last_updated: Optional[str] = None
 
     @property
@@ -56,13 +61,55 @@ class CompanyHoldings:
         return self.shares_history[-1]
 
     def add_holdings_update(self, update: HoldingsUpdate):
-        """Add a holdings update, maintaining chronological order."""
+        """Add a holdings update, maintaining chronological order. Deduplicates by date + accession_number."""
+        # If same date + accession_number exists, update treasury_value_usd if newly available
+        for existing in self.holdings_history:
+            if existing.date == update.date and existing.accession_number == update.accession_number:
+                if update.treasury_value_usd and not existing.treasury_value_usd:
+                    existing.treasury_value_usd = update.treasury_value_usd
+                    self.last_updated = datetime.now().isoformat()
+                return
         self.holdings_history.append(update)
         self.holdings_history.sort(key=lambda x: x.date)
         self.last_updated = datetime.now().isoformat()
 
     def add_shares_update(self, update: SharesUpdate):
-        """Add a shares update, maintaining chronological order."""
+        """Add a shares update, maintaining chronological order. Deduplicates by date + accession_number.
+
+        When adding an official entry, auto-removes any vwap_estimate entries
+        with dates between the previous official entry and the new one.
+        """
+        # Skip if same date + accession_number already exists
+        for existing in self.shares_history:
+            if existing.date == update.date and existing.accession_number == update.accession_number:
+                return
+
+        # If this is an official entry, remove vwap_estimate entries it supersedes
+        if update.method != "vwap_estimate":
+            # Find previous official entry date
+            official_entries = [s for s in self.shares_history if s.method != "vwap_estimate"]
+            official_entries.sort(key=lambda x: x.date)
+            prev_official_date = None
+            for entry in reversed(official_entries):
+                if entry.date < update.date:
+                    prev_official_date = entry.date
+                    break
+
+            # Remove estimates between previous official and this new official
+            if prev_official_date is not None:
+                self.shares_history = [
+                    s for s in self.shares_history
+                    if not (s.method == "vwap_estimate"
+                            and s.date > prev_official_date
+                            and s.date <= update.date)
+                ]
+            else:
+                # No previous official — remove all estimates before this date
+                self.shares_history = [
+                    s for s in self.shares_history
+                    if not (s.method == "vwap_estimate" and s.date <= update.date)
+                ]
+
         self.shares_history.append(update)
         self.shares_history.sort(key=lambda x: x.date)
         self.last_updated = datetime.now().isoformat()
@@ -103,6 +150,7 @@ class HoldingsTracker:
                         primary_asset=company_data.get("primary_asset", "UNKNOWN"),
                         holdings_history=holdings_history,
                         shares_history=shares_history,
+                        other_holdings=company_data.get("other_holdings", []),
                         last_updated=company_data.get("last_updated"),
                     )
 
@@ -116,6 +164,7 @@ class HoldingsTracker:
                 "primary_asset": company.primary_asset,
                 "holdings_history": [asdict(h) for h in company.holdings_history],
                 "shares_history": [asdict(s) for s in company.shares_history],
+                "other_holdings": company.other_holdings,
                 "last_updated": company.last_updated,
             }
 
@@ -153,19 +202,26 @@ class HoldingsTracker:
         source: str,
         accession_number: Optional[str] = None,
         notes: Optional[str] = None,
+        treasury_value_usd: Optional[float] = None,
     ):
         """
-        Record a treasury holdings update.
+        Record a treasury holdings update. Only SEC filing sources allowed.
 
         Args:
             ticker: Company ticker
             units: Number of units held (e.g., BTC count)
             asset: Asset type (BTC, ETH, etc.)
             update_date: Date of the update
-            source: Source of info (8-K, 10-Q, etc.)
+            source: Source of info (8-K, 10-Q, 10-K only)
             accession_number: SEC accession number if applicable
             notes: Optional notes
+            treasury_value_usd: Reported USD value of treasury at filing date
         """
+        VALID_SOURCES = {"8-K", "10-Q", "10-K", "6-K", "20-F"}
+        if source not in VALID_SOURCES:
+            print(f"    REJECT {ticker} treasury: source '{source}' is not an SEC filing — only {VALID_SOURCES} allowed")
+            return
+
         ticker = ticker.upper()
         if ticker not in self.holdings:
             self.init_company(ticker, "", asset)
@@ -177,6 +233,7 @@ class HoldingsTracker:
             source=source,
             accession_number=accession_number,
             notes=notes,
+            treasury_value_usd=treasury_value_usd,
         )
         self.holdings[ticker].add_holdings_update(update)
         self._save()
@@ -217,6 +274,28 @@ class HoldingsTracker:
         )
         self.holdings[ticker].add_shares_update(update)
         self._save()
+
+    def clear_estimated_shares(self, ticker: str):
+        """Remove all vwap_estimate entries for a company.
+
+        Called before recomputing estimates so they refresh each run
+        with current crypto prices.
+
+        Args:
+            ticker: Company ticker
+        """
+        ticker = ticker.upper()
+        company = self.holdings.get(ticker)
+        if not company:
+            return
+        original_count = len(company.shares_history)
+        company.shares_history = [
+            s for s in company.shares_history if s.method != "vwap_estimate"
+        ]
+        removed = original_count - len(company.shares_history)
+        if removed > 0:
+            company.last_updated = datetime.now().isoformat()
+            self._save()
 
     def estimate_shares_from_treasury_change(
         self,
@@ -292,7 +371,7 @@ class HoldingsTracker:
         Get current holdings and shares for a company.
 
         Returns:
-            Dict with current_holdings, current_shares, or None
+            Dict with current_holdings, current_shares, other_holdings, or None
         """
         company = self.holdings.get(ticker.upper())
         if not company:
@@ -314,5 +393,9 @@ class HoldingsTracker:
             result["shares_date"] = company.current_shares.date
             result["shares_source"] = company.current_shares.source
             result["shares_method"] = company.current_shares.method
+
+        # Include other holdings (private equity, public equity stakes)
+        if hasattr(company, 'other_holdings') and company.other_holdings:
+            result["other_holdings"] = company.other_holdings
 
         return result

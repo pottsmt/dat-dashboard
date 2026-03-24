@@ -1,59 +1,361 @@
 {
   "companies": [
-    {"ticker": "ALTS", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "ALTS US Equity"},
-    {"ticker": "ASST", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "ASST US Equity"},
-    {"ticker": "AVX", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "AVX US Equity"},
-    {"ticker": "BMNR", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "BMNR US Equity"},
-    {"ticker": "BNC", "name": "CEA Industries Inc.", "primary_asset": "BNB", "bloomberg": "BNC US Equity"},
-    {"ticker": "BRR", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "BRR US Equity"},
-    {"ticker": "BTBT", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "BTBT US Equity"},
-    {"ticker": "BTOG", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "BTOG US Equity"},
-    {"ticker": "CEPO", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "CEPO US Equity"},
-    {"ticker": "CYPH", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "CYPH US Equity"},
-    {"ticker": "DFDV", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "DFDV US Equity"},
-    {"ticker": "EMPD", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "EMPD US Equity"},
-    {"ticker": "ETHM", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "ETHM US Equity"},
-    {"ticker": "ETHZ", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "ETHZ US Equity"},
-    {"ticker": "FGNX", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "FGNX US Equity"},
-    {"ticker": "FWDI", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "FWDI US Equity"},
-    {"ticker": "GNLN", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "GNLN US Equity"},
-    {"ticker": "HSDT", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "HSDT US Equity"},
-    {"ticker": "HYPD", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "HYPD US Equity"},
-    {"ticker": "IPST", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "IPST US Equity"},
-    {"ticker": "LITS", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "LITS US Equity"},
-    {"ticker": "MLAC", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "MLAC US Equity"},
-    {"ticker": "MSTR", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "MSTR US Equity"},
-    {"ticker": "NA", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "NA US Equity"},
-    {"ticker": "NAKA", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "NAKA US Equity"},
-    {"ticker": "ORBS", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "ORBS US Equity"},
-    {"ticker": "PAPL", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "PAPL US Equity"},
-    {"ticker": "PURR", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "PURR US Equity"},
-    {"ticker": "SBET", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "SBET US Equity"},
-    {"ticker": "SLMT", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "SLMT US Equity"},
-    {"ticker": "STSS", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "STSS US Equity"},
-    {"ticker": "SUIG", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "SUIG US Equity"},
-    {"ticker": "SVRN", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "SVRN US Equity"},
-    {"ticker": "THAR", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "THAR US Equity"},
-    {"ticker": "TLGYF", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "TLGYF US Equity"},
-    {"ticker": "TONX", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "TONX US Equity"},
-    {"ticker": "TRON", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "TRON US Equity"},
-    {"ticker": "UPXI", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "UPXI US Equity"},
-    {"ticker": "ZONE", "name": "Unknown", "primary_asset": "UNKNOWN", "bloomberg": "ZONE US Equity"}
+    {
+      "ticker": "ALTS",
+      "name": "ALT5 Sigma Corp",
+      "primary_asset": "WLFI",
+      "bloomberg": "ALTS US Equity"
+    },
+    {
+      "ticker": "ASST",
+      "name": "Strive Inc",
+      "primary_asset": "BTC",
+      "bloomberg": "ASST US Equity",
+      "dashboard_url": "https://treasury.strive.com/"
+    },
+    {
+      "ticker": "AVX",
+      "name": "AVAX One Technology",
+      "primary_asset": "AVAX",
+      "bloomberg": "AVX US Equity",
+      "dashboard_url": "https://analytics-avaxone.theblueprint.xyz/"
+    },
+    {
+      "ticker": "BMNR",
+      "name": "Bitmine Immersion Technologies",
+      "primary_asset": "ETH",
+      "bloomberg": "BMNR US Equity"
+    },
+    {
+      "ticker": "BNC",
+      "name": "CEA Industries Inc.",
+      "primary_asset": "BNB",
+      "bloomberg": "BNC US Equity",
+      "dashboard_url": "https://ceaindustries.com/dashboard.html"
+    },
+    {
+      "ticker": "BRR",
+      "name": "ProCap Financial",
+      "primary_asset": "BTC",
+      "bloomberg": "BRR US Equity"
+    },
+    {
+      "ticker": "BTBT",
+      "name": "Bit Digital Inc",
+      "primary_asset": "ETH",
+      "bloomberg": "BTBT US Equity"
+    },
+    {
+      "ticker": "BTOG",
+      "name": "Bit Origin Ltd",
+      "primary_asset": "DOGE",
+      "bloomberg": "BTOG US Equity"
+    },
+    {
+      "ticker": "CEPO",
+      "name": "BSTR Holdings",
+      "primary_asset": "BTC",
+      "bloomberg": "CEPO US Equity"
+    },
+    {
+      "ticker": "CYPH",
+      "name": "Cypherpunk Technologies",
+      "primary_asset": "ZEC",
+      "bloomberg": "CYPH US Equity"
+    },
+    {
+      "ticker": "DFDV",
+      "name": "DeFi Development Corp",
+      "primary_asset": "SOL",
+      "bloomberg": "DFDV US Equity",
+      "dashboard_url": "https://defidevcorp.com/dashboard"
+    },
+    {
+      "ticker": "EMPD",
+      "name": "Empery Digital",
+      "primary_asset": "BTC",
+      "bloomberg": "EMPD US Equity",
+      "dashboard_url": "https://www.emperydigital.com/treasury-dashboard"
+    },
+    {
+      "ticker": "ETHM",
+      "name": "The Ether Machine",
+      "primary_asset": "ETH",
+      "bloomberg": "ETHM US Equity"
+    },
+    {
+      "ticker": "ETHZ",
+      "name": "ETHZilla Corporation",
+      "primary_asset": "ETH",
+      "bloomberg": "ETHZ US Equity"
+    },
+    {
+      "ticker": "FGNX",
+      "name": "FG Nexus",
+      "primary_asset": "ETH",
+      "bloomberg": "FGNX US Equity",
+      "dashboard_url": "https://fgnexus.io/nav-tracker"
+    },
+    {
+      "ticker": "FWDI",
+      "name": "Forward Industries",
+      "primary_asset": "SOL",
+      "bloomberg": "FWDI US Equity"
+    },
+    {
+      "ticker": "GNLN",
+      "name": "Greenlane Holdings",
+      "primary_asset": "BERA",
+      "bloomberg": "GNLN US Equity"
+    },
+    {
+      "ticker": "HSDT",
+      "name": "Solana Company (Helius)",
+      "primary_asset": "SOL",
+      "bloomberg": "HSDT US Equity"
+    },
+    {
+      "ticker": "HYPD",
+      "name": "Hyperion DeFi",
+      "primary_asset": "HYPE",
+      "bloomberg": "HYPD US Equity"
+    },
+    {
+      "ticker": "IPST",
+      "name": "IP Strategy",
+      "primary_asset": "IP",
+      "bloomberg": "IPST US Equity",
+      "dashboard_url": "https://ipstrategy.co/treasury-dashboard"
+    },
+    {
+      "ticker": "LITS",
+      "name": "Lite Strategy",
+      "primary_asset": "LTC",
+      "bloomberg": "LITS US Equity",
+      "dashboard_url": "https://litestrategy.com/dashboard/"
+    },
+    {
+      "ticker": "MLAC",
+      "name": "Mountain Lake / Avalanche Treasury",
+      "primary_asset": "AVAX",
+      "bloomberg": "MLAC US Equity"
+    },
+    {
+      "ticker": "MSTR",
+      "name": "Strategy Inc",
+      "primary_asset": "BTC",
+      "bloomberg": "MSTR US Equity",
+      "dashboard_url": "https://www.strategy.com/"
+    },
+    {
+      "ticker": "NA",
+      "name": "Nano Labs",
+      "primary_asset": "BNB",
+      "bloomberg": "NA US Equity"
+    },
+    {
+      "ticker": "NAKA",
+      "name": "Nakamoto Holdings",
+      "primary_asset": "BTC",
+      "bloomberg": "NAKA US Equity",
+      "dashboard_url": "https://nakamoto.com/dashboard"
+    },
+    {
+      "ticker": "ORBS",
+      "name": "Eightco Holdings",
+      "primary_asset": "WLD",
+      "bloomberg": "ORBS US Equity"
+    },
+    {
+      "ticker": "PAPL",
+      "name": "Pineapple Financial",
+      "primary_asset": "INJ",
+      "bloomberg": "PAPL US Equity",
+      "dashboard_url": "https://pineappledigitalassets.com/dat-dashboard"
+    },
+    {
+      "ticker": "PURR",
+      "name": "Hyperliquid Strategies",
+      "primary_asset": "HYPE",
+      "bloomberg": "PURR US Equity",
+      "dashboard_url": "https://www.hypestrat.xyz/dashboard"
+    },
+    {
+      "ticker": "SBET",
+      "name": "SharpLink Gaming",
+      "primary_asset": "ETH",
+      "bloomberg": "SBET US Equity",
+      "dashboard_url": "https://www.sharplink.com/eth-dashboard"
+    },
+    {
+      "ticker": "SLMT",
+      "name": "Solmate Infrastructure",
+      "primary_asset": "SOL",
+      "bloomberg": "SLMT US Equity"
+    },
+    {
+      "ticker": "STSS",
+      "name": "Sharps Technology",
+      "primary_asset": "SOL",
+      "bloomberg": "STSS US Equity"
+    },
+    {
+      "ticker": "SUIG",
+      "name": "SUI Group Holdings",
+      "primary_asset": "SUI",
+      "bloomberg": "SUIG US Equity"
+    },
+    {
+      "ticker": "SVRN",
+      "name": "Sovereign Holdings",
+      "primary_asset": "NEAR",
+      "bloomberg": "SVRN US Equity"
+    },
+    {
+      "ticker": "CNTN",
+      "name": "Tharimmune",
+      "primary_asset": "CC",
+      "bloomberg": "CNTN US Equity"
+    },
+    {
+      "ticker": "TLGYF",
+      "name": "TLGY Acquisition / StablecoinX",
+      "primary_asset": "ENA",
+      "bloomberg": "TLGYF US Equity"
+    },
+    {
+      "ticker": "TONX",
+      "name": "TON Strategy Co",
+      "primary_asset": "TON",
+      "bloomberg": "TONX US Equity"
+    },
+    {
+      "ticker": "TRON",
+      "name": "Tron Inc",
+      "primary_asset": "TRX",
+      "bloomberg": "TRON US Equity"
+    },
+    {
+      "ticker": "UPXI",
+      "name": "Upexi Inc",
+      "primary_asset": "SOL",
+      "bloomberg": "UPXI US Equity"
+    },
+    {
+      "ticker": "ZONE",
+      "name": "CleanCore Solutions",
+      "primary_asset": "DOGE",
+      "bloomberg": "ZONE US Equity"
+    }
   ],
   "assets": {
-    "BTC": {"name": "Bitcoin", "coingecko_id": "bitcoin"},
-    "ETH": {"name": "Ethereum", "coingecko_id": "ethereum"},
-    "SOL": {"name": "Solana", "coingecko_id": "solana"},
-    "BNB": {"name": "Binance Coin", "coingecko_id": "binancecoin"},
-    "TRX": {"name": "Tron", "coingecko_id": "tron"},
-    "XRP": {"name": "XRP", "coingecko_id": "ripple"},
-    "DOGE": {"name": "Dogecoin", "coingecko_id": "dogecoin"},
-    "ADA": {"name": "Cardano", "coingecko_id": "cardano"},
-    "AVAX": {"name": "Avalanche", "coingecko_id": "avalanche-2"},
-    "LINK": {"name": "Chainlink", "coingecko_id": "chainlink"},
-    "DOT": {"name": "Polkadot", "coingecko_id": "polkadot"},
-    "MATIC": {"name": "Polygon", "coingecko_id": "matic-network"},
-    "UNI": {"name": "Uniswap", "coingecko_id": "uniswap"},
-    "UNKNOWN": {"name": "Unknown", "coingecko_id": null}
+    "BTC": {
+      "name": "Bitcoin",
+      "coingecko_id": "bitcoin"
+    },
+    "ETH": {
+      "name": "Ethereum",
+      "coingecko_id": "ethereum"
+    },
+    "SOL": {
+      "name": "Solana",
+      "coingecko_id": "solana"
+    },
+    "BNB": {
+      "name": "Binance Coin",
+      "coingecko_id": "binancecoin"
+    },
+    "TRX": {
+      "name": "Tron",
+      "coingecko_id": "tron"
+    },
+    "XRP": {
+      "name": "XRP",
+      "coingecko_id": "ripple"
+    },
+    "DOGE": {
+      "name": "Dogecoin",
+      "coingecko_id": "dogecoin"
+    },
+    "ADA": {
+      "name": "Cardano",
+      "coingecko_id": "cardano"
+    },
+    "AVAX": {
+      "name": "Avalanche",
+      "coingecko_id": "avalanche-2"
+    },
+    "LINK": {
+      "name": "Chainlink",
+      "coingecko_id": "chainlink"
+    },
+    "DOT": {
+      "name": "Polkadot",
+      "coingecko_id": "polkadot"
+    },
+    "MATIC": {
+      "name": "Polygon",
+      "coingecko_id": "matic-network"
+    },
+    "UNI": {
+      "name": "Uniswap",
+      "coingecko_id": "uniswap"
+    },
+    "BERA": {
+      "name": "Berachain",
+      "coingecko_id": "berachain-bera"
+    },
+    "NEAR": {
+      "name": "NEAR Protocol",
+      "coingecko_id": "near"
+    },
+    "TON": {
+      "name": "Toncoin",
+      "coingecko_id": "the-open-network"
+    },
+    "HYPE": {
+      "name": "Hyperliquid",
+      "coingecko_id": "hyperliquid"
+    },
+    "WLD": {
+      "name": "Worldcoin",
+      "coingecko_id": "worldcoin-wld"
+    },
+    "WLFI": {
+      "name": "World Liberty Financial",
+      "coingecko_id": "world-liberty-financial"
+    },
+    "SUI": {
+      "name": "Sui",
+      "coingecko_id": "sui"
+    },
+    "INJ": {
+      "name": "Injective",
+      "coingecko_id": "injective-protocol"
+    },
+    "IP": {
+      "name": "Story Protocol",
+      "coingecko_id": "story-2"
+    },
+    "LTC": {
+      "name": "Litecoin",
+      "coingecko_id": "litecoin"
+    },
+    "ZEC": {
+      "name": "Zcash",
+      "coingecko_id": "zcash"
+    },
+    "CC": {
+      "name": "Canton Network",
+      "coingecko_id": "canton-network"
+    },
+    "ENA": {
+      "name": "Ethena",
+      "coingecko_id": "ethena"
+    },
+    "UNKNOWN": {
+      "name": "Unknown",
+      "coingecko_id": null
+    }
   }
 }

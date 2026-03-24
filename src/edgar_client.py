@@ -158,7 +158,11 @@ class EdgarClient:
         return filings
 
     def download_filing(self, filing: dict) -> str:
-        """Download filing document and extract text content."""
+        """Download filing document and extract text content.
+
+        For 8-K filings, also downloads EX-99.x exhibits (press releases,
+        presentations) which often contain treasury updates.
+        """
         url = filing["filing_url"]
         response = self._get(url)
 
@@ -169,10 +173,63 @@ class EdgarClient:
         else:
             text = response.text
 
+        # For 8-K/6-K filings, also fetch EX-99.x exhibits (press releases, presentations)
+        if filing.get("form_type") in ("8-K", "6-K"):
+            exhibits_text = self._download_8k_exhibits(filing)
+            if exhibits_text:
+                text = text + "\n\n" + exhibits_text
+
         filing_path = self.filings_dir / f"{filing['filing_id']}.txt"
         filing_path.write_text(text, encoding="utf-8")
 
         return text
+
+    def _download_8k_exhibits(self, filing: dict) -> str:
+        """Download EX-99.x exhibits from an 8-K filing index page."""
+        cik = filing["cik"].lstrip("0")
+        accession = filing["accession_number"]
+        accession_clean = accession.replace("-", "")
+        index_url = f"{self.ARCHIVES_URL}/{cik}/{accession_clean}/{accession}-index.htm"
+
+        try:
+            response = self._get(index_url)
+            soup = BeautifulSoup(response.text, "lxml")
+            table = soup.find("table", class_="tableFile")
+            if not table:
+                return ""
+
+            exhibit_texts = []
+            for row in table.find_all("tr")[1:]:
+                cols = row.find_all("td")
+                if len(cols) < 4:
+                    continue
+                doc_type = cols[3].text.strip()
+                # Only grab EX-99.x exhibits (press releases, presentations, transcripts)
+                if not doc_type.startswith("EX-99"):
+                    continue
+                link = cols[2].find("a")
+                if not link or not link.get("href"):
+                    continue
+                href = link["href"]
+                # Skip non-document files (images, etc.)
+                if any(href.endswith(ext) for ext in (".jpg", ".png", ".gif", ".pdf")):
+                    continue
+                exhibit_url = f"https://www.sec.gov{href}"
+                try:
+                    ex_response = self._get(exhibit_url)
+                    ex_content_type = ex_response.headers.get("Content-Type", "")
+                    if "html" in ex_content_type or exhibit_url.endswith((".htm", ".html")):
+                        ex_text = self._extract_html_text(ex_response.text)
+                    else:
+                        ex_text = ex_response.text
+                    if ex_text.strip():
+                        exhibit_texts.append(f"--- {doc_type} ---\n{ex_text}")
+                except Exception:
+                    continue
+
+            return "\n\n".join(exhibit_texts)
+        except Exception:
+            return ""
 
     def _extract_html_text(self, html: str) -> str:
         """Extract readable text from HTML filing."""

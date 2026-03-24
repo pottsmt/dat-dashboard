@@ -3,7 +3,9 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from email.mime.application import MIMEApplication
 from datetime import datetime
+from pathlib import Path
 from typing import Optional
 
 
@@ -38,6 +40,7 @@ class EmailSender:
         html_content: str,
         plain_text: str,
         subject: Optional[str] = None,
+        pdf_path: Optional[Path] = None,
     ) -> bool:
         """Send DAT Dashboard report email.
 
@@ -45,6 +48,7 @@ class EmailSender:
             html_content: HTML version of report
             plain_text: Plain text version of report
             subject: Optional custom subject line
+            pdf_path: Optional path to PDF file to attach
 
         Returns:
             True if email sent successfully
@@ -53,15 +57,27 @@ class EmailSender:
             date_str = datetime.now().strftime("%Y-%m-%d")
             subject = f"DAT Dashboard Report - {date_str}"
 
-        # Create message
-        msg = MIMEMultipart("alternative")
+        # Create mixed message (supports both alternative body + attachments)
+        msg = MIMEMultipart("mixed")
         msg["Subject"] = subject
         msg["From"] = self.sender_email
         msg["To"] = self.recipient_email
 
-        # Attach plain text and HTML versions
-        msg.attach(MIMEText(plain_text, "plain"))
-        msg.attach(MIMEText(html_content, "html"))
+        # Email body (plain text + HTML alternatives)
+        body = MIMEMultipart("alternative")
+        body.attach(MIMEText(plain_text, "plain"))
+        body.attach(MIMEText(html_content, "html"))
+        msg.attach(body)
+
+        # Attach PDF if provided
+        if pdf_path and pdf_path.exists():
+            with open(pdf_path, "rb") as f:
+                pdf_attachment = MIMEApplication(f.read(), _subtype="pdf")
+                pdf_attachment.add_header(
+                    "Content-Disposition", "attachment",
+                    filename=pdf_path.name,
+                )
+                msg.attach(pdf_attachment)
 
         # Send email
         try:

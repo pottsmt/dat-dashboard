@@ -12,7 +12,7 @@ class CoinGeckoClient:
     """Client for CoinGecko API to fetch crypto prices."""
 
     BASE_URL = "https://api.coingecko.com/api/v3"
-    RATE_LIMIT_DELAY = 1.5  # seconds between requests (free tier)
+    RATE_LIMIT_DELAY = 6.0  # seconds between requests (free tier ~10 req/min to be safe)
 
     def __init__(self, api_key: Optional[str] = None):
         """
@@ -37,11 +37,24 @@ class CoinGeckoClient:
             time.sleep(self.RATE_LIMIT_DELAY - elapsed)
         self._last_request_time = time.time()
 
-    def _get(self, endpoint: str, params: Optional[Dict] = None) -> Dict:
-        """Make GET request to CoinGecko API."""
+    def _get(self, endpoint: str, params: Optional[Dict] = None, retries: int = 3) -> Dict:
+        """Make GET request to CoinGecko API with retry logic."""
         self._rate_limit()
         url = f"{self.BASE_URL}/{endpoint}"
-        response = self.session.get(url, params=params)
+
+        for attempt in range(retries):
+            response = self.session.get(url, params=params)
+
+            if response.status_code == 429:
+                # Rate limited - wait and retry
+                wait_time = (attempt + 1) * 10  # 10, 20, 30 seconds
+                time.sleep(wait_time)
+                continue
+
+            response.raise_for_status()
+            return response.json()
+
+        # Final attempt failed
         response.raise_for_status()
         return response.json()
 
@@ -152,6 +165,39 @@ class CoinGeckoClient:
             return None
 
         return ((current_price - old_price) / old_price) * 100
+
+    def get_all_performance(self, coin_id: str, vs_currency: str = "usd") -> Dict[str, Optional[float]]:
+        """
+        Get 3d, 7d, and 30d performance in a single API call.
+
+        Args:
+            coin_id: CoinGecko coin ID
+            vs_currency: Currency for price
+
+        Returns:
+            Dict with '3d', '7d', '30d' keys mapping to percentage changes
+        """
+        result = {"3d": None, "7d": None, "30d": None}
+
+        # Fetch 30 days of history (covers all timeframes)
+        history = self.get_price_history(coin_id, 30, vs_currency)
+        if len(history) < 2:
+            return result
+
+        current_price = history[-1]["price"]
+        if current_price == 0:
+            return result
+
+        # Calculate performance for each timeframe
+        # history[0] is ~30 days ago, history[-1] is today
+        for days_key, days_back in [("3d", 3), ("7d", 7), ("30d", 30)]:
+            # Find price from N days ago (index from end)
+            idx = max(0, len(history) - days_back - 1)
+            old_price = history[idx]["price"]
+            if old_price > 0:
+                result[days_key] = ((current_price - old_price) / old_price) * 100
+
+        return result
 
     def get_vwap(self, coin_id: str, days: int, vs_currency: str = "usd") -> Optional[float]:
         """

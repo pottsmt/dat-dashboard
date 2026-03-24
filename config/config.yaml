@@ -9,12 +9,12 @@ coingecko:
   base_url: "https://api.coingecko.com/api/v3"
   api_key: ""
 
-anthropic:
+openai:
   enabled: true
-  model: "claude-sonnet-4-20250514"
+  model: "gpt-4o"
 
 email:
-  enabled: false
+  enabled: true
   smtp_server: "smtp.gmail.com"
   smtp_port: 587
   sender_email: "${EMAIL_SENDER}"
@@ -27,6 +27,8 @@ edgar:
     - "10-K"
     - "10-Q"
     - "8-K"
+    - "20-F"
+    - "6-K"
   lookback_days: 365
 
 output:
